@@ -3,42 +3,42 @@
   "wk": 3,
   "opp": "Wobbly Dix",
   "venue": "home",
-  "status": "Line-up in",
+  "status": "Line-ups in",
   "frames": [
     {
       "label": "Singles 1",
       "us": "Göran",
-      "them": "",
+      "them": "Steve",
       "r": ""
     },
     {
       "label": "Singles 2",
       "us": "Bob",
-      "them": "",
+      "them": "Alfredo",
       "r": ""
     },
     {
       "label": "Singles 3",
       "us": "Dave",
-      "them": "",
+      "them": "Tanja",
       "r": ""
     },
     {
       "label": "Singles 4",
       "us": "Michel",
-      "them": "",
+      "them": "Pete",
       "r": ""
     },
     {
       "label": "Singles 5",
       "us": "Nic",
-      "them": "",
+      "them": "Ramona",
       "r": ""
     },
     {
       "label": "Singles 6",
       "us": "Tom",
-      "them": "",
+      "them": "Andrea",
       "r": ""
     },
     {
@@ -60,5 +60,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-10-29T20:16:00+01:00"
+  "updated": "2026-10-29T20:37:00+01:00"
 }
