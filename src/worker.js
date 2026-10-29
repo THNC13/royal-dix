@@ -1,6 +1,7 @@
 // Entry point when the site is deployed as a Cloudflare Worker with static assets.
-// Only /api/ask runs code; every other request is answered with the site's files.
+// Only /api/* runs code (rules assistant, photo album); every other request is answered with the site's files.
 import { onRequestPost } from "../functions/api/ask.js";
+import { handlePhotos } from "./photos.js";
 
 export default {
   async fetch(request, env) {
@@ -10,6 +11,9 @@ export default {
         return new Response("Method not allowed", { status: 405, headers: { allow: "POST" } });
       }
       return onRequestPost({ request, env });
+    }
+    if (url.pathname === "/api/photos" || url.pathname.startsWith("/api/photos/")) {
+      return handlePhotos(request, env, url);
     }
     return env.ASSETS.fetch(request);
   }

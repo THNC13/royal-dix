@@ -124,6 +124,7 @@
     ["table.html", "League Table", "table"],
     ["fixtures.html", "Fixtures", "fixtures"],
     ["team.html", "Our Team", "team"],
+    ["photos.html", "Memories", "photos"],
     ["rules.html", "Rules", "rules"]
   ];
   var top = K.$("topbar");

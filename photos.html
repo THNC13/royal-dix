@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memories · Royal Dix</title>
+  <meta name="description" content="The Royal Dix photo album: add your pictures from our nights.">
+  <meta name="theme-color" content="#0a2f21">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="photos">
+
+<header class="topbar" id="topbar"></header>
+
+<main>
+
+  <section class="block" id="memories" aria-labelledby="mem-h">
+    <div class="block-head">
+      <h2 id="mem-h">Memories</h2>
+      <p class="sub">Pictures from our nights. Anyone with the link can add one.</p>
+    </div>
+
+    <form class="upload" id="up-form" autocomplete="off">
+      <label class="drop" for="up-file" id="drop">
+        <span class="drop-ico" aria-hidden="true">+</span>
+        <span class="drop-t">Add photos</span>
+        <span class="drop-s">Tap to take one or pick from your gallery</span>
+      </label>
+      <input id="up-file" type="file" accept="image/*" multiple hidden>
+      <div class="up-row">
+        <input id="up-name" type="text" maxlength="30" placeholder="Your name (optional)" aria-label="Your name">
+        <input id="up-cap" type="text" maxlength="140" placeholder="Caption (optional), e.g. Wobbly Dix night" aria-label="Caption">
+      </div>
+      <p class="up-msg" id="up-msg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="album" id="album" aria-live="polite"></div>
+    <p class="up-empty" id="album-empty" hidden>No photos yet. Be the first to add one.</p>
+  </section>
+
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<script src="data/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/photos.js"></script>
+</body>
+</html>

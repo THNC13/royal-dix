@@ -59,3 +59,12 @@ Every tab is its own page: `index.html` (home), `players.html`, `league-ranking.
 The tabs, the match-day ticker and the footer are built by `js/common.js`, so they are the same everywhere.
 
 Match day is automatic: if a fixture in `data/data.js` has today's date and no result yet, a pop-up appears (once per visit) and then drops into a scrolling red ticker along the top of every page. To test it, add `?today=2026-10-29` to any page address.
+
+## Memories (photo album)
+
+`photos.html` lets anyone with the link add photos; they are shrunk on the phone and stored in a Cloudflare **KV** namespace bound as `PHOTOS` (see `src/photos.js`).
+To switch it on: Cloudflare dashboard, Storage & Databases, KV, create a namespace called `royal-dix-photos`, then add this to `wrangler.jsonc` (using its ID):
+
+    "kv_namespaces": [{ "binding": "PHOTOS", "id": "<namespace id>" }]
+
+Deleting a photo from the viewer needs the `TEAM_CODE` secret (the same code as the rules assistant).
