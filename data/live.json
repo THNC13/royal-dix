@@ -3,7 +3,7 @@
   "wk": 3,
   "opp": "Wobbly Dix",
   "venue": "home",
-  "status": "Singles 5 in play",
+  "status": "Singles 6 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -33,13 +33,13 @@
       "label": "Singles 5",
       "us": "Nic",
       "them": "Ramona",
-      "r": "live"
+      "r": "W"
     },
     {
       "label": "Singles 6",
       "us": "Tom",
       "them": "Andrea",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Doubles 1",
@@ -60,5 +60,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-10-29T21:10:00+01:00"
+  "updated": "2026-10-29T21:23:00+01:00"
 }
