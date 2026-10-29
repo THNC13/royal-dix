@@ -4,6 +4,8 @@
   "name": "royal-dix",
   "main": "src/worker.js",
   "compatibility_date": "2025-09-01",
+  // Photo album storage (Memories page)
+  "kv_namespaces": [{ "binding": "PHOTOS", "id": "4339f63e854f40368bbda548ac783aa2" }],
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
