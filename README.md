@@ -68,3 +68,8 @@ To switch it on: Cloudflare dashboard, Storage & Databases, KV, create a namespa
     "kv_namespaces": [{ "binding": "PHOTOS", "id": "<namespace id>" }]
 
 Whoever adds a photo can delete it from the same phone (a private token is kept in the browser). The `TEAM_CODE` secret lets a captain delete any photo.
+
+## Rules assistant: free or paid
+
+By default the assistant uses Cloudflare's free built-in AI (`ai` binding in `wrangler.jsonc`), with a daily free allowance and no key.
+For better answers, add an `ANTHROPIC_API_KEY` secret in Cloudflare and it will use Claude instead. Add a `TEAM_CODE` secret to make people type a code first.

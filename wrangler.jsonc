@@ -6,6 +6,8 @@
   "compatibility_date": "2025-09-01",
   // Photo album storage (Memories page)
   "kv_namespaces": [{ "binding": "PHOTOS", "id": "4339f63e854f40368bbda548ac783aa2" }],
+  // Free rules assistant (Cloudflare Workers AI). Used when no ANTHROPIC_API_KEY secret is set.
+  "ai": { "binding": "AI" },
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
