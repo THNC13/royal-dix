@@ -25,6 +25,8 @@ css/ js/ assets/    look, behaviour, badge
 4. **Save and Deploy**. After a minute you get an address like `royal-dix.pages.dev`.
 5. Optional: **Custom domains** tab to use your own domain.
 
+If Cloudflare creates it as a **Worker** instead of a Pages project (its newer "Import a repository" flow does this), that also works: `wrangler.jsonc`, `src/worker.js` and `.assetsignore` in this repo tell it to publish the site files and run the rules assistant. Leave the build command empty and keep the default deploy command (`npx wrangler deploy`).
+
 From now on, every change you commit on GitHub goes live by itself in about a minute.
 
 ## 3. Switch on the rules assistant (optional)

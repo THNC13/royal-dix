@@ -1,0 +1,12 @@
+{
+  // Deploys the whole folder as a static site on Cloudflare (Workers with static assets).
+  // Only /api/* runs code (the optional rules assistant); everything else is served as plain files.
+  "name": "royal-dix",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  }
+}
