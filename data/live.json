@@ -3,13 +3,13 @@
   "wk": 3,
   "opp": "Wobbly Dix",
   "venue": "home",
-  "status": "Line-ups in",
+  "status": "Singles 1 in play",
   "frames": [
     {
       "label": "Singles 1",
       "us": "Göran",
       "them": "Steve",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 2",
@@ -60,5 +60,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-10-29T20:37:00+01:00"
+  "updated": "2026-10-29T20:38:00+01:00"
 }
