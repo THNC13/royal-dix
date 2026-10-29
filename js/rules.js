@@ -12,8 +12,7 @@
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
 
-  var cur = document.querySelector(".topbar nav [aria-current]");
-  if (cur && cur.scrollIntoView) { try { cur.scrollIntoView({ inline: "center", block: "nearest" }); } catch (e) {} }
+
 
   var flat = [];
   var examples = [

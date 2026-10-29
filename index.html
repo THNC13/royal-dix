@@ -12,22 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
 
-<header class="topbar">
-  <a class="brand" href="#top" aria-label="Royal Dix home">
-    <img src="assets/badge-sm.jpg" alt="" width="36" height="36">
-    <span>Royal Dix</span>
-  </a>
-  <nav aria-label="Sections">
-    <a href="#players"><span>Player Rankings</span></a>
-    <a href="#league-ranking"><span>League Ranking</span></a>
-    <a href="#table"><span>League Table</span></a>
-    <a href="#fixtures"><span>Fixtures</span></a>
-    <a href="#squad"><span>Our Team</span></a>
-    <a href="rules.html"><span>Rules</span></a>
-  </nav>
-</header>
+<header class="topbar" id="topbar"></header>
 
 <section class="hero" id="top">
   <div class="hero-in">
@@ -52,117 +39,12 @@
     <div class="sb" id="next" aria-live="polite"></div>
   </div>
 </section>
+<p class="hint-home">Pick a pocket above to see the stats</p>
 
-<main>
-
-  <section class="block" id="players" aria-labelledby="players-h">
-    <div class="block-head">
-      <h2 id="players-h">Player rankings</h2>
-      <p class="sub">Ranked on win %, then frames won. Updated <span class="updated"></span>.</p>
-    </div>
-    <div class="seg" role="group" aria-label="Which frames to count">
-      <button type="button" data-view="S" aria-pressed="true">Singles</button>
-      <button type="button" data-view="D" aria-pressed="false">Doubles</button>
-      <button type="button" data-view="A" aria-pressed="false">All frames</button>
-    </div>
-    <p class="cap-line" id="players-cap"></p>
-    <div class="table-frame">
-      <div class="notice" id="awaiting" hidden>No frames recorded for this view yet.</div>
-      <div class="scroll">
-        <table class="rank" id="players-table">
-          <thead>
-            <tr>
-              <th class="c-pos" scope="col">Pos</th>
-              <th class="c-name" scope="col">Player</th>
-              <th scope="col"><abbr title="Frames played">P</abbr></th>
-              <th scope="col"><abbr title="Frames won">W</abbr></th>
-              <th class="hide-s" scope="col"><abbr title="Frames lost">L</abbr></th>
-              <th class="c-pct" scope="col">Win %</th>
-              <th class="hide-s c-form" scope="col">Form</th>
-            </tr>
-          </thead>
-          <tbody id="players-body"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="league-ranking" aria-labelledby="lr-h">
-    <div class="block-head">
-      <h2 id="lr-h">League ranking</h2>
-      <p class="sub" id="lr-sub"></p>
-    </div>
-    <div class="chalkboard">
-      <div class="notice" id="lr-empty" hidden></div>
-      <div class="scroll">
-        <table class="league" id="lr-table" hidden>
-          <thead>
-            <tr>
-              <th class="c-pos" scope="col">Pos</th>
-              <th class="c-name" scope="col">Player</th>
-              <th class="c-name hide-s" scope="col">Team</th>
-              <th scope="col"><abbr title="Ranking games played">Gp</abbr></th>
-              <th scope="col"><abbr title="Games won">W</abbr></th>
-              <th class="c-pts" scope="col">Win %</th>
-            </tr>
-          </thead>
-          <tbody id="lr-body"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="table" aria-labelledby="table-h">
-    <div class="block-head">
-      <h2 id="table-h">League table</h2>
-      <p class="sub" id="league-sub"></p>
-    </div>
-    <div class="chalkboard">
-      <div class="scroll">
-        <table class="league" id="league-table">
-          <thead>
-            <tr>
-              <th class="c-pos" scope="col">Pos</th>
-              <th class="c-name" scope="col">Team</th>
-              <th scope="col"><abbr title="Played">P</abbr></th>
-              <th scope="col"><abbr title="Won">W</abbr></th>
-              <th scope="col"><abbr title="Lost">L</abbr></th>
-              <th class="hide-s" scope="col"><abbr title="Frames for">F</abbr></th>
-              <th class="hide-s" scope="col"><abbr title="Frames against">A</abbr></th>
-              <th scope="col"><abbr title="Frame difference">+/−</abbr></th>
-              <th class="c-pts" scope="col">Pts</th>
-            </tr>
-          </thead>
-          <tbody id="league-body"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="fixtures" aria-labelledby="fixtures-h">
-    <div class="block-head">
-      <h2 id="fixtures-h">Fixtures 26/27</h2>
-      <p class="sub">Thursday nights. Scores are league points out of 10.</p>
-    </div>
-    <ol class="fixtures" id="fixtures-list"></ol>
-  </section>
-
-  <section class="block" id="squad" aria-labelledby="squad-h">
-    <div class="block-head">
-      <h2 id="squad-h">Our team</h2>
-      <p class="sub">Everyone in the Royal Dix rack. Ball numbers follow the team sheet.</p>
-    </div>
-    <div class="rack" id="rack"></div>
-  </section>
-
-</main>
-
-<footer class="foot">
-  <img src="assets/badge-sm.jpg" alt="" width="44" height="44">
-  <p>Royal Dix · Econ Winter Pool League 2026/27<br><small>Last updated <span class="updated"></span> · <a href="rules.html">Rules</a></small></p>
-</footer>
+<footer class="foot" id="foot"></footer>
 
 <script src="data/data.js"></script>
+<script src="js/common.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

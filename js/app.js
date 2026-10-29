@@ -1,48 +1,12 @@
 (function () {
   "use strict";
-  var D = window.RD;
-
-  var esc = function (s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
-  };
-  var $ = function (id) { return document.getElementById(id); };
-  var fmtDate = function (iso, opts) {
-    return new Date(iso + "T12:00:00").toLocaleDateString("en-GB", opts || { weekday: "short", day: "numeric", month: "short" });
-  };
-  var ball = function (n) { return '<span class="ball" data-n="' + n + '"><span>' + n + "</span></span>"; };
-  var pct = function (p) { return p.p > 0 ? (p.w / p.p) * 100 : null; };
-
-  // Work out played / won / form for one player from their frame list.
-  // view: "S" singles, "D" doubles, "A" all frames
-  var statsFor = function (pl, view) {
-    var res = (pl.results || []).map(function (s) {
-      var m = /^(\d+)([SD])-([WL])$/.exec(s);
-      return m ? { t: m[2], r: m[3] } : null;
-    }).filter(function (x) { return x && (view === "A" || x.t === view); });
-    var won = res.filter(function (x) { return x.r === "W"; }).length;
-    return { p: res.length, w: won, form: res.map(function (x) { return x.r; }) };
-  };
-
-  // ---------- Dates ----------
-  var today = new Date(); today.setHours(0, 0, 0, 0);
-  var dayMs = 86400000;
-  var dateOf = function (f) { return new Date(f.date + "T00:00:00"); };
-  var playable = function (f) { return f.venue === "home" || f.venue === "away"; };
-
-  document.querySelectorAll(".updated").forEach(function (el) {
-    el.textContent = fmtDate(D.lastUpdated, { day: "numeric", month: "long", year: "numeric" });
-  });
-
-  // ---------- Where teams sit ----------
-  var ordinal = function (n) { var s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
-  var rowOf = function (name) {
-    var i = D.league.findIndex(function (t) { return t.team === name; });
-    return i < 0 ? null : { pos: i + 1, t: D.league[i] };
-  };
-  var plural = function (n, w) { return n + " " + w + (n === 1 ? "" : "s"); };
+  var D = window.RD, K = window.RDK;
+  var esc = K.esc, $ = K.$, fmtDate = K.fmtDate, ball = K.ball, pct = K.pct, statsFor = K.statsFor;
+  var today = K.today, dayMs = K.dayMs, dateOf = K.dateOf, playable = K.playable;
+  var ordinal = K.ordinal, rowOf = K.rowOf, plural = K.plural;
   var us = rowOf(D.team);
+
+// ---------- Where teams sit ----------
 
   // ---------- Scoreboard (next match, their position, ours) ----------
   var upcoming = D.fixtures.filter(function (f) { return dateOf(f) >= today && f.venue !== "tbc"; })[0];
@@ -77,9 +41,10 @@
     }
     cells.push(cell(esc(D.team), ordinal(us.pos), us.t.pts + " pts" + (gap ? " · " + gap : "")));
   }
-  $("next").innerHTML = cells.join("");
+  if ($("next")) $("next").innerHTML = cells.join("");
 
-  // ---------- Player rankings ----------
+  if ($("players-body")) {
+// ---------- Player rankings ----------
   var captions = {
     S: "Singles only. These frames decide the league's player ranking and top player.",
     D: "Doubles frames on their own. They don't count towards the league ranking.",
@@ -126,7 +91,10 @@
   });
   renderPlayers("S");
 
-  // ---------- League table ----------
+  }
+
+  if ($("league-body")) {
+// ---------- League table ----------
   // Order follows the official table (tie-breaks are the league's own), so no re-sorting here.
   var league = D.league.slice();
   var leaguePlayed = league.some(function (t) { return t.p > 0; });
@@ -141,7 +109,10 @@
       "<td>" + (diff > 0 ? "+" : "") + diff + '</td><td class="c-pts">' + t.pts + "</td></tr>";
   }).join("");
 
-  // ---------- Fixtures ----------
+  }
+
+  if ($("fixtures-list")) {
+// ---------- Fixtures ----------
   var nextKey = upcoming ? upcoming.wk : null;
   var oppSub = function (f) {
     var r = playable(f) ? rowOf(f.opp) : null;
@@ -168,7 +139,10 @@
       '<span class="opp">' + esc(f.opp) + oppSub(f) + "</span>" + right + "</li>";
   }).join("");
 
-  // ---------- Our team: packed rack, 8 in the middle ----------
+  }
+
+  if ($("rack")) {
+// ---------- Our team: packed rack, 8 in the middle ----------
   var rackRows = [[1, 2, 3, 4], [5, 8, 6], [7, 9, 11, 12]];
   var byBall = {};
   D.players.forEach(function (p) { byBall[p.ball] = p; });
@@ -188,7 +162,10 @@
     }).join("") + "</div>";
   }).join("");
 
-  // ---------- Official league player ranking (shown once the league publishes it) ----------
+  }
+
+  if ($("lr-body")) {
+// ---------- Official league player ranking (shown once the league publishes it) ----------
   var LR = D.leagueRanking || { published: false, rows: [] };
   var lrRows = LR.rows || [];
   if (LR.published && lrRows.length) {
@@ -206,30 +183,6 @@
     $("lr-empty").textContent = "Not published yet. The league site shows no player ranking so far this season. It will appear here once the league publishes it.";
   }
 
-  // ---------- Tab row follows the page (so a phone user always sees where they are) ----------
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".topbar nav a[href^='#']"));
-  var navBox = document.querySelector(".topbar nav");
-  var setCurrent = function (id) {
-    navLinks.forEach(function (a) {
-      var on = a.getAttribute("href") === "#" + id;
-      if (on) { a.setAttribute("aria-current", "true"); } else { a.removeAttribute("aria-current"); }
-      if (on && navBox && navBox.scrollWidth > navBox.clientWidth) {
-        var left = a.offsetLeft - (navBox.clientWidth - a.offsetWidth) / 2;
-        try { navBox.scrollTo({ left: left, behavior: "smooth" }); } catch (e) { navBox.scrollLeft = left; }
-      }
-    });
-  };
-  if ("IntersectionObserver" in window) {
-    var seen = {};
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { seen[en.target.id] = en.isIntersecting ? en.intersectionRatio : 0; });
-      var best = null;
-      Object.keys(seen).forEach(function (k) { if (seen[k] > 0 && (best === null || seen[k] >= seen[best])) best = k; });
-      if (best) setCurrent(best);
-    }, { rootMargin: "-120px 0px -45% 0px", threshold: [0, .25, .5, .75, 1] });
-    navLinks.forEach(function (a) {
-      var s = document.getElementById(a.getAttribute("href").slice(1));
-      if (s) io.observe(s);
-    });
   }
-})();
+
+  })();

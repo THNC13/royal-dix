@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>League Ranking · Royal Dix</title>
+  <meta name="description" content="The league's official player ranking, shown once published.">
+  <meta name="theme-color" content="#0a2f21">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="league-ranking">
+
+<header class="topbar" id="topbar"></header>
+
+<main>
+
+  <section class="block" id="league-ranking" aria-labelledby="lr-h">
+    <div class="block-head">
+      <h2 id="lr-h">League ranking</h2>
+      <p class="sub" id="lr-sub"></p>
+    </div>
+    <div class="chalkboard">
+      <div class="notice" id="lr-empty" hidden></div>
+      <div class="scroll">
+        <table class="league" id="lr-table" hidden>
+          <thead>
+            <tr>
+              <th class="c-pos" scope="col">Pos</th>
+              <th class="c-name" scope="col">Player</th>
+              <th class="c-name hide-s" scope="col">Team</th>
+              <th scope="col"><abbr title="Ranking games played">Gp</abbr></th>
+              <th scope="col"><abbr title="Games won">W</abbr></th>
+              <th class="c-pts" scope="col">Win %</th>
+            </tr>
+          </thead>
+          <tbody id="lr-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<script src="data/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -12,22 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="rules">
 
-<header class="topbar">
-  <a class="brand" href="index.html" aria-label="Royal Dix home">
-    <img src="assets/badge-sm.jpg" alt="" width="36" height="36">
-    <span>Royal Dix</span>
-  </a>
-  <nav aria-label="Sections">
-    <a href="index.html#players"><span>Player Rankings</span></a>
-    <a href="index.html#league-ranking"><span>League Ranking</span></a>
-    <a href="index.html#table"><span>League Table</span></a>
-    <a href="index.html#fixtures"><span>Fixtures</span></a>
-    <a href="index.html#squad"><span>Our Team</span></a>
-    <a href="rules.html" aria-current="page"><span>Rules</span></a>
-  </nav>
-</header>
+<header class="topbar" id="topbar"></header>
 
 <section class="page-head">
   <div class="in">
@@ -72,11 +59,10 @@
 
 </main>
 
-<footer class="foot">
-  <img src="assets/badge-sm.jpg" alt="" width="44" height="44">
-  <p>Royal Dix · Econ Winter Pool League 2026/27<br><small><a href="index.html">Back to the team page</a></small></p>
-</footer>
+<footer class="foot" id="foot"></footer>
 
+<script src="data/data.js"></script>
+<script src="js/common.js"></script>
 <script src="js/rules.js"></script>
 </body>
 </html>

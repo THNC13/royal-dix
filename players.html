@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Player Rankings · Royal Dix</title>
+  <meta name="description" content="Royal Dix player rankings: win percentage from singles, doubles and all frames.">
+  <meta name="theme-color" content="#0a2f21">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="players">
+
+<header class="topbar" id="topbar"></header>
+
+<main>
+
+  <section class="block" id="players" aria-labelledby="players-h">
+    <div class="block-head">
+      <h2 id="players-h">Player rankings</h2>
+      <p class="sub">Ranked on win %, then frames won. Updated <span class="updated"></span>.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Which frames to count">
+      <button type="button" data-view="S" aria-pressed="true">Singles</button>
+      <button type="button" data-view="D" aria-pressed="false">Doubles</button>
+      <button type="button" data-view="A" aria-pressed="false">All frames</button>
+    </div>
+    <p class="cap-line" id="players-cap"></p>
+    <div class="table-frame">
+      <div class="notice" id="awaiting" hidden>No frames recorded for this view yet.</div>
+      <div class="scroll">
+        <table class="rank" id="players-table">
+          <thead>
+            <tr>
+              <th class="c-pos" scope="col">Pos</th>
+              <th class="c-name" scope="col">Player</th>
+              <th scope="col"><abbr title="Frames played">P</abbr></th>
+              <th scope="col"><abbr title="Frames won">W</abbr></th>
+              <th class="hide-s" scope="col"><abbr title="Frames lost">L</abbr></th>
+              <th class="c-pct" scope="col">Win %</th>
+              <th class="hide-s c-form" scope="col">Form</th>
+            </tr>
+          </thead>
+          <tbody id="players-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<script src="data/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

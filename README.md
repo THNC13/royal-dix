@@ -52,3 +52,10 @@ On GitHub open `data/data.js`, click the pencil icon, change the numbers, then *
 - **lastUpdated** and **leagueAfterWeek**: bump the date and week number.
 
 Or just send the screenshots and have Claude prepare the updated `data.js`.
+
+## Pages and match day
+
+Every tab is its own page: `index.html` (home), `players.html`, `league-ranking.html`, `table.html`, `fixtures.html`, `team.html`, `rules.html`.
+The tabs, the match-day ticker and the footer are built by `js/common.js`, so they are the same everywhere.
+
+Match day is automatic: if a fixture in `data/data.js` has today's date and no result yet, a pop-up appears (once per visit) and then drops into a scrolling red ticker along the top of every page. To test it, add `?today=2026-10-29` to any page address.
