@@ -3,7 +3,7 @@
   "wk": 3,
   "opp": "Wobbly Dix",
   "venue": "home",
-  "status": "Singles 3 in play",
+  "status": "Singles 4 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -21,13 +21,13 @@
       "label": "Singles 3",
       "us": "Dave",
       "them": "Tanja",
-      "r": "live"
+      "r": "W"
     },
     {
       "label": "Singles 4",
       "us": "Michel",
       "them": "Pete",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 5",
@@ -60,5 +60,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-10-29T20:52:00+01:00"
+  "updated": "2026-10-29T21:02:00+01:00"
 }
