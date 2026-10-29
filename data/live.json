@@ -3,7 +3,7 @@
   "wk": 3,
   "opp": "Wobbly Dix",
   "venue": "home",
-  "status": "Doubles 1 in play",
+  "status": "Doubles 2 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -45,13 +45,13 @@
       "label": "Doubles 1",
       "us": "Alvaro & Nic",
       "them": "Steve & Ramona",
-      "r": "live"
+      "r": "L"
     },
     {
       "label": "Doubles 2",
       "us": "Dave & Michel",
       "them": "Tanja & Alfredo",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Doubles 3",
@@ -60,5 +60,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-10-29T21:51:00+01:00"
+  "updated": "2026-10-29T22:09:00+01:00"
 }
