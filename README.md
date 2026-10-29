@@ -67,4 +67,4 @@ To switch it on: Cloudflare dashboard, Storage & Databases, KV, create a namespa
 
     "kv_namespaces": [{ "binding": "PHOTOS", "id": "<namespace id>" }]
 
-Deleting a photo from the viewer needs the `TEAM_CODE` secret (the same code as the rules assistant).
+Whoever adds a photo can delete it from the same phone (a private token is kept in the browser). The `TEAM_CODE` secret lets a captain delete any photo.

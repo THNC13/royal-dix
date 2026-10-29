@@ -4,6 +4,9 @@
   var K = window.RDK, $ = K.$, esc = K.esc;
   var album = $("album"), msg = $("up-msg"), file = $("up-file");
   var photos = [], code = "";
+  var mine = {};   // photos added from this phone: id -> private delete token
+  try { mine = JSON.parse(localStorage.getItem("rd-mine") || "{}") || {}; } catch (e) { mine = {}; }
+  var keep = function () { try { localStorage.setItem("rd-mine", JSON.stringify(mine)); } catch (e) {} };
 
   var say = function (t, bad) { msg.textContent = t || ""; msg.className = "up-msg" + (bad ? " bad" : ""); };
 
@@ -68,7 +71,7 @@
       }).then(function (r) {
         if (r.status === 503) throw new Error("The photo album isn't switched on yet.");
         if (!r.ok) return r.json().then(function (j) { throw new Error(j.error || "Upload failed."); });
-        ok++;
+        return r.json().then(function (j) { if (j && j.id && j.token) { mine[j.id] = j.token; keep(); } ok++; });
       }).then(next, function (e) { say(e.message || "That one didn't work. Try again.", true); i = list.length; setTimeout(function () { file.value = ""; }, 0); });
     };
     next();
@@ -84,6 +87,7 @@
     var p = photos[cur];
     box.querySelector("img").src = "/api/photos/" + p.id;
     box.querySelector("img").alt = p.caption || "Royal Dix photo";
+    var d = box.querySelector(".lb-del"); if (d) { d.textContent = mine[p.id] ? "Delete my photo" : "Delete (captain)"; d.hidden = false; var pn = box.querySelector(".lb-pane"); if (pn) pn.hidden = true; var st0 = box.querySelector(".lb-st"); if (st0) st0.textContent = ""; }
     var when = p.ts ? new Date(p.ts).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : "";
     box.querySelector(".lb-cap").innerHTML = (p.caption ? "<b>" + esc(p.caption) + "</b>" : "") + "<span>" + esc([p.by ? "Added by " + p.by : "", when].filter(Boolean).join(" · ")) + "</span>";
   }
@@ -103,9 +107,10 @@
     var ask = function (t, bad) { st.textContent = t || ""; st.className = "lb-st" + (bad ? " bad" : ""); };
     var doDelete = function (c) {
       ask("Deleting…");
-      fetch("/api/photos/" + photos[cur].id, { method: "DELETE", headers: { "x-team-code": c } }).then(function (r) {
+      var id0 = photos[cur].id, h = mine[id0] ? { "x-delete-token": mine[id0] } : { "x-team-code": c };
+      fetch("/api/photos/" + id0, { method: "DELETE", headers: h }).then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (j) {
-          if (r.ok) { code = c; close(); load(); return; }
+          if (r.ok) { if (mine[id0]) { delete mine[id0]; keep(); } else code = c; close(); load(); return; }
           if (r.status === 401) { code = ""; ask("That code isn't right. Try again.", true); inp.value = ""; inp.focus(); return; }
           if (r.status === 403) { ask("Deleting isn't switched on yet. Add the TEAM_CODE secret in Cloudflare first.", true); return; }
           ask(j.error || "Couldn't delete that photo.", true);
@@ -113,6 +118,10 @@
       }, function () { ask("No connection. Try again.", true); });
     };
     del.onclick = function () {
+      if (mine[photos[cur].id]) {
+        if (del.getAttribute("data-sure") !== "1") { del.setAttribute("data-sure", "1"); del.textContent = "Tap again to delete this photo"; setTimeout(function () { if (del.getAttribute("data-sure") === "1") { del.removeAttribute("data-sure"); del.textContent = "Delete my photo"; } }, 4000); return; }
+        del.removeAttribute("data-sure"); doDelete(""); return;
+      }
       if (code) { doDelete(code); return; }
       pane.hidden = false; del.hidden = true; inp.focus();
     };

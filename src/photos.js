@@ -1,5 +1,6 @@
 // Photo album API for the "Memories" page. Photos live in a Cloudflare KV namespace bound as PHOTOS.
-// Anyone with the link can add a photo; deleting needs the team code (TEAM_CODE secret).
+// Anyone with the link can add a photo. Whoever uploads a photo can delete it (their browser keeps a private token);
+// the team code (TEAM_CODE secret) can delete any photo.
 const MAX_BYTES = 2.5 * 1024 * 1024;   // the page shrinks photos first, so real uploads are far smaller
 const MAX_PHOTOS = 500;
 const json = (obj, status = 200, extra = {}) =>
@@ -11,6 +12,7 @@ function sniff(b) {                         // trust the bytes, not the filename
   if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 && b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return "image/webp";
   return null;
 }
+const sha = async (t) => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)))].map((x) => x.toString(16).padStart(2, "0")).join("");
 const clean = (s, n) => String(s || "").replace(/[\u0000-\u001f<>]/g, " ").trim().slice(0, n);
 
 export async function handlePhotos(request, env, url) {
@@ -39,8 +41,10 @@ export async function handlePhotos(request, env, url) {
       const ts = Date.now();
       const nid = String(ts).padStart(13, "0") + "-" + crypto.randomUUID().slice(0, 6);
       const meta = { ts, by: clean(form.get("name"), 30), caption: clean(form.get("caption"), 140), type };
+      const token = crypto.randomUUID() + crypto.randomUUID();
+      await kv.put("k:" + nid, await sha(token));
       await kv.put("p:" + nid, bytes, { metadata: meta });
-      return json({ ok: true, id: nid, ...meta }, 201);
+      return json({ ok: true, id: nid, token, ...meta }, 201);
     }
     return json({ error: "Method not allowed" }, 405, { allow: "GET, POST" });
   }
@@ -52,9 +56,12 @@ export async function handlePhotos(request, env, url) {
     return new Response(value, { headers: { "content-type": (metadata && metadata.type) || "image/jpeg", "cache-control": "public, max-age=31536000, immutable", "x-content-type-options": "nosniff" } });
   }
   if (request.method === "DELETE") {
-    if (!env.TEAM_CODE) return json({ error: "Deleting isn't set up." }, 403);
-    if (request.headers.get("x-team-code") !== env.TEAM_CODE) return json({ error: "Wrong team code." }, 401);
-    await kv.delete("p:" + id);
+    const code = request.headers.get("x-team-code"), tok = request.headers.get("x-delete-token");
+    let ok = false;
+    if (tok) { const h = await kv.get("k:" + id); ok = !!h && h === (await sha(tok)); }
+    if (!ok && code) ok = !!env.TEAM_CODE && code === env.TEAM_CODE;
+    if (!ok) return json({ error: tok ? "Only the person who added this photo can delete it." : env.TEAM_CODE ? "Wrong team code." : "Deleting isn't set up." }, tok || env.TEAM_CODE ? 401 : 403);
+    await kv.delete("p:" + id); await kv.delete("k:" + id);
     return json({ ok: true });
   }
   return json({ error: "Method not allowed" }, 405, { allow: "GET, DELETE" });
