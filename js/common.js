@@ -46,34 +46,74 @@
   var esc = K.esc;
   var page = document.body.getAttribute("data-page") || "home";
 
-  // ---------- Match day ----------
-  var todays = D.fixtures.filter(function (f) { return K.playable(f) && K.dateOf(f).getTime() === K.today.getTime(); })[0] || null;
+  // ---------- What day is it? Match day, just after a match, or the eve of one ----------
+  var DAY = K.dayMs, T = K.today.getTime();
+  var played = D.fixtures.filter(K.playable);
+  var todays = played.filter(function (f) { return K.dateOf(f).getTime() === T && !f.result; })[0] || null;
+  var last = played.filter(function (f) { return f.result && K.dateOf(f).getTime() <= T; }).pop() || null;
+  var nextF = played.filter(function (f) { return K.dateOf(f).getTime() > T && !f.result; })[0] || null;
   K.matchToday = todays;
   var us = K.rowOf(D.team), them = todays ? K.rowOf(todays.opp) : null;
+  var dShort = function (f) { return K.fmtDate(f.date, { weekday: "long", day: "numeric", month: "long" }); };
+  var vs = function (f) { return f.venue === "home" ? "at home to " + f.opp : "away at " + f.opp; };
 
-  var tickerItems = [];
-  var popupHtml = "";
-  if (todays) {
-    var home = todays.venue === "home";
-    var fixtureTxt = home ? D.team + " v " + todays.opp : D.team + " away at " + todays.opp;
-    if (todays.result) {
-      var r = todays.result;
-      tickerItems = ["Full time", D.team + " " + r.us + "–" + r.them + " " + todays.opp, "League points out of 10"];
-    } else {
-      tickerItems = ["Today is match day", fixtureTxt, home ? "Home" : "Away", "Tonight"];
-      if (them) tickerItems.push(todays.opp + " are " + K.ordinal(them.pos) + " on " + them.t.pts + " pts");
-      if (us) tickerItems.push(D.team + " are " + K.ordinal(us.pos) + " on " + us.t.pts + " pts");
-      popupHtml =
-        '<div class="md" id="md" role="dialog" aria-modal="true" aria-labelledby="md-h">' +
-          '<div class="md-card" id="md-card" tabindex="-1">' +
-            '<div class="md-k" id="md-h">Match day</div>' +
-            '<div class="md-vs"><span>' + esc(home ? D.team : todays.opp) + "</span><i>v</i><span>" + esc(home ? todays.opp : D.team) + "</span></div>" +
-            '<div class="md-meta"><span class="tag ' + todays.venue + '">' + todays.venue + "</span><span>Tonight</span></div>" +
-            (them && us ? '<div class="md-pos"><span>' + esc(todays.opp) + " · " + K.ordinal(them.pos) + " · " + them.t.pts + " pts</span><span>" +
-              esc(D.team) + " · " + K.ordinal(us.pos) + " · " + us.t.pts + " pts</span></div>" : "") +
-            '<button type="button" class="btn" id="md-go">Let’s go</button>' +
-          "</div></div>";
+  // Where is the next game? (mentions a bye or break week first, if there is one)
+  var nextLine = function (after) {
+    var up = D.fixtures.filter(function (f) { return K.dateOf(f).getTime() > after && f.venue !== "tbc"; });
+    if (!up.length) return "More fixtures to be confirmed";
+    var f = up[0], txt = "";
+    if (!K.playable(f)) {
+      txt = (f.venue === "bye" ? "Bye week (" + K.fmtDate(f.date, { day: "numeric", month: "short" }) + ")" : "League break");
+      var g = up.filter(K.playable)[0];
+      return g ? txt + ". Next match: " + dShort(g) + ", " + vs(g) : txt;
     }
+    return "Next match: " + dShort(f) + ", " + vs(f);
+  };
+
+  var upDays = nextF ? Math.round((K.dateOf(nextF).getTime() - T) / DAY) : null;
+  var kind = todays ? "day" : (last && Math.round((T - K.dateOf(last).getTime()) / DAY) <= 6 && (upDays === null || upDays > 1)) ? "result" : (nextF && upDays === 1) ? "eve" : "";
+  var tickerItems = [], popup = null, popupKey = "";
+
+  if (kind === "day") {
+    var home = todays.venue === "home";
+    tickerItems = ["Today is match day", home ? D.team + " v " + todays.opp : D.team + " away at " + todays.opp, home ? "Home" : "Away", "Tonight"];
+    if (them) tickerItems.push(todays.opp + " are " + K.ordinal(them.pos) + " on " + them.t.pts + " pts");
+    if (us) tickerItems.push(D.team + " are " + K.ordinal(us.pos) + " on " + us.t.pts + " pts");
+    var pep = !us ? "Let’s get after it, lads." :
+      us.pos <= 3 ? "We’re " + K.ordinal(us.pos) + ", lads. Keep it going tonight!" :
+      "We’re " + K.ordinal(us.pos) + ", lads. A win today and we’ll be right up there!";
+    popup = { k: "Match day", vs: [home ? D.team : todays.opp, home ? todays.opp : D.team], tag: todays.venue, when: "Tonight", msg: pep,
+      pos: them && us ? [todays.opp + " · " + K.ordinal(them.pos) + " · " + them.t.pts + " pts", D.team + " · " + K.ordinal(us.pos) + " · " + us.t.pts + " pts"] : null, btn: "Let’s go" };
+    popupKey = "day-" + todays.date;
+  } else if (kind === "result") {
+    var r = last.result, won = r.us > r.them, lost = r.us < r.them, tableFresh = D.leagueAfterWeek && String(D.leagueAfterWeek) >= String(last.wk);
+    var line = won ? "What a night, lads! Brilliant work." :
+      lost ? "We lost this one, but we go again. Chins up, Royal Dix." : "Honours even. We take the point and go again.";
+    var home2 = last.venue === "home", sc = home2 ? [D.team, r.us, r.them, last.opp] : [last.opp, r.them, r.us, D.team];
+    tickerItems = ["Full time", sc[0] + " " + sc[1] + "–" + sc[2] + " " + sc[3], won ? "Great win" : lost ? "We go again" : "A point each", nextLine(K.dateOf(last).getTime())];
+    popup = { k: won ? "Full time · Win" : lost ? "Full time" : "Full time · Draw", vs: [sc[0] + " " + sc[1], sc[2] + " " + sc[3]], tag: last.venue, when: K.fmtDate(last.date), msg: line,
+      pos: [nextLine(K.dateOf(last).getTime())], btn: won ? "Onwards" : "We go again", vsScore: true };
+    popupKey = "res-" + last.date;
+  } else if (kind === "eve") {
+    tickerItems = ["Match tomorrow", D.team + " " + (nextF.venue === "home" ? "v " + nextF.opp : "away at " + nextF.opp), "Thursday night", "Get your eye in"];
+    popup = { k: "Match tomorrow", vs: [nextF.venue === "home" ? D.team : nextF.opp, nextF.venue === "home" ? nextF.opp : D.team], tag: nextF.venue, when: dShort(nextF),
+      msg: "Early night, chalk up, and let’s go again.", pos: null, btn: "Right then" };
+    popupKey = "eve-" + nextF.date;
+  }
+  if (kind === "result" && Math.round((T - K.dateOf(last).getTime()) / DAY) > 3) tickerItems = [];   // ticker only for the first few days after a match
+
+  var popupHtml = "";
+  if (popup) {
+    popupHtml =
+      '<div class="md" id="md" role="dialog" aria-modal="true" aria-labelledby="md-h">' +
+        '<div class="md-card" id="md-card" tabindex="-1">' +
+          '<div class="md-k" id="md-h">' + esc(popup.k) + "</div>" +
+          '<div class="md-vs"><span>' + esc(popup.vs[0]) + "</span><i>" + (popup.vsScore ? "–" : "v") + "</i><span>" + esc(popup.vs[1]) + "</span></div>" +
+          '<div class="md-meta"><span class="tag ' + popup.tag + '">' + popup.tag + "</span><span>" + esc(popup.when) + "</span></div>" +
+          '<p class="md-msg">' + esc(popup.msg) + "</p>" +
+          (popup.pos ? '<div class="md-pos">' + popup.pos.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + "</div>" : "") +
+          '<button type="button" class="btn" id="md-go">' + esc(popup.btn) + "</button>" +
+        "</div></div>";
   }
 
   // ---------- Top bar ----------
@@ -125,7 +165,7 @@
   // ---------- Match-day popup: pops up, then sinks into the ticker like a ball into a pocket ----------
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (popupHtml && !reduce) {
-    var key = "rd-md-" + D.fixtures.indexOf(todays) + "-" + todays.date, seen = false;
+    var key = "rd-md-" + popupKey, seen = false;
     try { seen = !K.simulated && sessionStorage.getItem(key) === "1"; } catch (e) {}
     if (!seen) {
       // On the home page wait for the 8 ball reveal (about 4 seconds) before the popup arrives.

@@ -9,8 +9,8 @@
 // ---------- Where teams sit ----------
 
   // ---------- Scoreboard (next match, their position, ours) ----------
-  var upcoming = D.fixtures.filter(function (f) { return dateOf(f) >= today && f.venue !== "tbc"; })[0];
-  var nextPlay = D.fixtures.filter(function (f) { return dateOf(f) >= today && playable(f); })[0];
+  var upcoming = D.fixtures.filter(function (f) { return dateOf(f) >= today && f.venue !== "tbc" && !f.result; })[0];
+  var nextPlay = D.fixtures.filter(function (f) { return dateOf(f) >= today && playable(f) && !f.result; })[0];
   var cell = function (k, big, sub) {
     return '<div class="sb-cell"><div class="k">' + k + '</div><div class="big">' + big + '</div><div class="s">' + sub + "</div></div>";
   };

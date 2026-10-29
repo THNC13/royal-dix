@@ -513,3 +513,5 @@ main > .block:first-child { padding-top: 40px; }
 .lv-frames .on { background: rgba(239,187,28,.22); box-shadow: inset 0 0 0 1px var(--brass); } .lv-frames .on .res { color: var(--brass-hi); animation: lvPulse 1.2s infinite; }
 .lv-foot { text-align: center; margin-top: 10px; font-size: 12px; color: var(--chalk-dim); opacity: .8; }
 .tk-live { color: #fff; background: rgba(0,0,0,.28); border-radius: 4px; }
+.md-msg { margin: 0 0 14px; font: 600 1.25rem/1.25 var(--cond); letter-spacing: .02em; color: #fff6dc; }
+.md-vs i { font-family: var(--cond); }

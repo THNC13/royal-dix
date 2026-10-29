@@ -9,6 +9,7 @@
 
   function render(L) {
     if (!L || !L.on) { host.hidden = true; return; }
+    if (L.date && (K.today - new Date(L.date + "T00:00:00")) / K.dayMs > 1) { host.hidden = true; return; }   // old match: tuck it away
     var fr = L.frames || [], w = 0, l = 0, played = 0, cur = null;
     fr.forEach(function (f) {
       if (f.r === "W") { w++; played++; } else if (f.r === "L") { l++; played++; } else if (f.r === "live") cur = f;
@@ -33,7 +34,7 @@
 
     // ticker: put the live score at the front of the running text
     var tk = document.querySelector(".tk-track");
-    if (tk) {
+    if (tk && !final) {
       tk.querySelectorAll(".tk-live").forEach(function (n) { n.remove(); });
       var kids = Array.prototype.slice.call(tk.children), g = kids.length / 4;
       var txt = (final ? "Full time " : "Live ") + a[0] + " " + a[1] + "–" + b[1] + " " + b[0];
