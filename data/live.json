@@ -3,17 +3,62 @@
   "wk": 3,
   "opp": "Wobbly Dix",
   "venue": "home",
-  "status": "Starting soon",
+  "status": "Line-up in",
   "frames": [
-    { "label": "Singles 1", "us": "", "them": "", "r": "" },
-    { "label": "Singles 2", "us": "", "them": "", "r": "" },
-    { "label": "Singles 3", "us": "", "them": "", "r": "" },
-    { "label": "Singles 4", "us": "", "them": "", "r": "" },
-    { "label": "Singles 5", "us": "", "them": "", "r": "" },
-    { "label": "Singles 6", "us": "", "them": "", "r": "" },
-    { "label": "Doubles 1", "us": "", "them": "", "r": "" },
-    { "label": "Doubles 2", "us": "", "them": "", "r": "" },
-    { "label": "Doubles 3", "us": "", "them": "", "r": "" }
+    {
+      "label": "Singles 1",
+      "us": "Göran",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Singles 2",
+      "us": "Bob",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Singles 3",
+      "us": "Dave",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Singles 4",
+      "us": "Michel",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Singles 5",
+      "us": "Nic",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Singles 6",
+      "us": "Tom",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Doubles 1",
+      "us": "",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Doubles 2",
+      "us": "",
+      "them": "",
+      "r": ""
+    },
+    {
+      "label": "Doubles 3",
+      "us": "",
+      "them": "",
+      "r": ""
+    }
   ],
-  "updated": "2026-10-29T19:50:00+01:00"
+  "updated": "2026-10-29T20:16:00+01:00"
 }
