@@ -543,3 +543,12 @@ main > .block:first-child { padding-top: 40px; }
 .lb-cap span { color: var(--chalk-dim); font-size: 14px; }
 .lb-del { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: none; border: 0; color: var(--chalk-dim); font-size: 13px; text-decoration: underline; cursor: pointer; padding: 8px 12px; }
 @media (max-width: 560px) { .album { grid-template-columns: repeat(3, 1fr); gap: 5px; } .up-row { grid-template-columns: 1fr; } }
+
+.lb-pane { position: absolute; left: 12px; right: 12px; bottom: 44px; display: flex; gap: 8px; justify-content: center; z-index: 2; }
+.lb-pane input { flex: 1; max-width: 220px; min-width: 0; padding: 12px; font-size: 16px; border-radius: 10px; border: 1px solid var(--brass); background: #120c08; color: var(--chalk); }
+.lb-pane button { border: 0; border-radius: 10px; padding: 0 16px; font: 700 1rem var(--cond); text-transform: uppercase; letter-spacing: .05em; cursor: pointer; }
+.lb-go { background: #b02a35; color: #fff; } .lb-no { background: #2a2a2a; color: var(--chalk); }
+.lb-st { position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; padding: 0 16px; font-size: 14px; color: var(--brass-hi); z-index: 2; }
+.lb-st.bad { color: #ff9aa2; }
+.lb-pane:not([hidden]) ~ .lb-del, .lb-del[hidden] { display: none; }
+.lb-cap { bottom: 100px; }

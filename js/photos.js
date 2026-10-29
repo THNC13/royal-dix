@@ -92,22 +92,33 @@
   function open(i) {
     box = document.createElement("div"); box.className = "lb"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
     box.innerHTML = '<button class="lb-x" aria-label="Close">×</button><button class="lb-n lb-p" aria-label="Previous">‹</button><img alt=""><button class="lb-n lb-nx" aria-label="Next">›</button>' +
-      '<div class="lb-cap"></div><button class="lb-del" type="button">Delete (captain)</button>';
+      '<div class="lb-cap"></div><button class="lb-del" type="button">Delete (captain)</button>' +
+      '<div class="lb-pane" hidden><input class="lb-code" type="password" autocomplete="off" placeholder="Team code" aria-label="Team code"><button class="lb-go" type="button">Delete</button><button class="lb-no" type="button">Cancel</button></div><div class="lb-st" role="status"></div>';
     document.body.appendChild(box); document.body.style.overflow = "hidden";
     box.querySelector(".lb-x").onclick = close;
     box.querySelector(".lb-p").onclick = function (e) { e.stopPropagation(); show(cur - 1); };
     box.querySelector(".lb-nx").onclick = function (e) { e.stopPropagation(); show(cur + 1); };
     box.addEventListener("click", function (e) { if (e.target === box) close(); });
-    box.querySelector(".lb-del").onclick = function () {
-      var c = code || window.prompt("Team code to delete this photo:");
-      if (!c) return;
-      var id = photos[cur].id;
-      fetch("/api/photos/" + id, { method: "DELETE", headers: { "x-team-code": c } }).then(function (r) {
-        if (r.status === 401) { code = ""; window.alert("Wrong team code."); return; }
-        if (!r.ok) { window.alert("Couldn't delete that photo."); return; }
-        code = c; close(); load();
-      });
+    var del = box.querySelector(".lb-del"), pane = box.querySelector(".lb-pane"), inp = box.querySelector(".lb-code"), st = box.querySelector(".lb-st");
+    var ask = function (t, bad) { st.textContent = t || ""; st.className = "lb-st" + (bad ? " bad" : ""); };
+    var doDelete = function (c) {
+      ask("Deleting…");
+      fetch("/api/photos/" + photos[cur].id, { method: "DELETE", headers: { "x-team-code": c } }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (r.ok) { code = c; close(); load(); return; }
+          if (r.status === 401) { code = ""; ask("That code isn't right. Try again.", true); inp.value = ""; inp.focus(); return; }
+          if (r.status === 403) { ask("Deleting isn't switched on yet. Add the TEAM_CODE secret in Cloudflare first.", true); return; }
+          ask(j.error || "Couldn't delete that photo.", true);
+        });
+      }, function () { ask("No connection. Try again.", true); });
     };
+    del.onclick = function () {
+      if (code) { doDelete(code); return; }
+      pane.hidden = false; del.hidden = true; inp.focus();
+    };
+    box.querySelector(".lb-go").onclick = function () { if (inp.value.trim()) doDelete(inp.value.trim()); else ask("Type the team code first.", true); };
+    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); box.querySelector(".lb-go").click(); } e.stopPropagation(); });
+    box.querySelector(".lb-no").onclick = function () { pane.hidden = true; del.hidden = false; ask(""); };
     var sx = null;   // swipe left / right on a phone
     box.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
     box.addEventListener("touchend", function (e) { if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); });
