@@ -99,7 +99,7 @@
   var league = D.league.slice();
   var leaguePlayed = league.some(function (t) { return t.p > 0; });
   $("league-sub").textContent = D.leagueName + " " + D.season +
-    (leaguePlayed ? (D.leagueAfterWeek ? ", after week " + D.leagueAfterWeek : "") : ". Points appear after the first results.");
+    (leaguePlayed ? (D.leaguePartial ? ". " + D.leaguePartial : D.leagueAfterWeek ? ", after week " + D.leagueAfterWeek : "") : ". Points appear after the first results.");
   $("league-body").innerHTML = league.map(function (t, i) {
     var diff = t.f - t.a;
     return '<tr class="' + (t.us ? "us" : "") + '">' +
