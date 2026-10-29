@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rules · Royal Dix</title>
+  <meta name="description" content="Quick-reference 8-ball rules for the Fuengirola Pool League, with a rule finder for use during a match.">
+  <meta name="theme-color" content="#0a2f21">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Royal Dix home">
+    <img src="assets/badge-sm.jpg" alt="" width="36" height="36">
+    <span>Royal Dix</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="index.html#players"><span>Player Rankings</span></a>
+    <a href="index.html#league-ranking"><span>League Ranking</span></a>
+    <a href="index.html#table"><span>League Table</span></a>
+    <a href="index.html#fixtures"><span>Fixtures</span></a>
+    <a href="index.html#squad"><span>Our Team</span></a>
+    <a href="rules.html" aria-current="page"><span>Rules</span></a>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="in">
+    <h1>Rules</h1>
+    <p>Quick-reference 8-ball rules for the league. Describe what happened and get the rule, or browse them all below. The referee's decision is final.</p>
+  </div>
+</section>
+
+<main>
+
+  <section class="block" aria-labelledby="ask-h" style="padding-top: 36px">
+    <form class="ask" id="ask-form" autocomplete="off">
+      <label for="q" id="ask-h">What happened?</label>
+      <textarea id="q" rows="3" maxlength="600" placeholder="e.g. My cue ball was touching the black and I played it. Foul?"></textarea>
+      <div class="chips" id="chips" aria-label="Example questions"></div>
+
+      <div class="codebox" id="codebox" hidden>
+        <label for="code">Team code</label>
+        <input id="code" type="password" autocomplete="off" placeholder="Ask your captain for the code">
+      </div>
+
+      <div class="row-end">
+        <button class="btn" id="ask-btn" type="submit">Ask the rules assistant</button>
+        <span class="hint">Matching rules appear as you type. The assistant gives a plain-English ruling from these rules.</span>
+      </div>
+
+      <div id="answer" aria-live="polite"></div>
+      <ul class="results" id="results" aria-label="Matching rules"></ul>
+    </form>
+  </section>
+
+  <section class="block" aria-labelledby="all-h">
+    <div class="block-head">
+      <h2 id="all-h">All the rules</h2>
+      <p class="sub">Tap a heading to open it.</p>
+    </div>
+    <div class="rules-list" id="rules-list">
+      <p class="sub" id="load-msg">Loading the rules…</p>
+    </div>
+    <p class="source-note">These are short summaries written for use at the table. The full wording is on the league's own <a href="http://fuengirolapoolleague.com/" rel="noopener">Rules page</a>, and if anything differs, the official rules and the referee win. AI answers can be wrong: if it matters, ask the referee.</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <img src="assets/badge-sm.jpg" alt="" width="44" height="44">
+  <p>Royal Dix · Econ Winter Pool League 2026/27<br><small><a href="index.html">Back to the team page</a></small></p>
+</footer>
+
+<script src="js/rules.js"></script>
+</body>
+</html>

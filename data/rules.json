@@ -1,0 +1,151 @@
+{
+  "title": "Fuengirola Pool League rules (EPA 8-ball) — quick reference",
+  "note": "Short summaries written for quick use at the table. If a summary and the official rules ever disagree, the official rules and the referee win.",
+  "sections": [
+    {
+      "id": "1", "title": "1. The game",
+      "rules": [
+        { "ref": "1", "tags": "referee final decision sportsmanlike spirit unsporting",
+          "text": "8 Ball Pool, played in a sportsmanlike way. The referee is the sole judge of fair and unfair play and can take whatever action is needed to enforce the rules. The referee's decision is final." }
+      ]
+    },
+    {
+      "id": "2", "title": "2. Equipment",
+      "rules": [
+        { "ref": "2", "tags": "balls groups colours colors stripes solids reds yellows table pockets",
+          "text": "Six-pocket rectangular table with 15 object balls plus the cue ball. There are two groups of object balls and the black 8. Sets are either numbered (solids 1–7, stripes 9–15) or plain colours (reds and yellows)." }
+      ]
+    },
+    {
+      "id": "3", "title": "3. Object of the game",
+      "rules": [
+        { "ref": "3", "tags": "win object black 8 eight group pot",
+          "text": "Pot all of your group in any order, then legally pot the black 8 to win the frame." }
+      ]
+    },
+    {
+      "id": "4", "title": "4. Starting the frame",
+      "rules": [
+        { "ref": "4(a)", "tags": "rack spot triangle",
+          "text": "Rack the balls with the black 8 on the 8-ball spot, where the lines between the centre and corner pockets cross." },
+        { "ref": "4(b)", "tags": "coin toss flip order who breaks",
+          "text": "A coin flip decides order of play. The winner either breaks or makes the opponent break." },
+        { "ref": "4(c)", "tags": "break foul break rack two visits cushion baulk line illegal",
+          "text": "The breaker plays from anywhere on or behind the baulk line at the triangle. They must pot at least one object ball or drive at least two object balls to a cushion. If they don't, it's a foul break: the balls are re-racked and the opponent starts with 2 visits." },
+        { "ref": "4(d)", "tags": "8 ball black eight potted on the break re-rack",
+          "text": "If the black 8 is potted on the break, re-rack and the same player breaks again. There is no penalty, even if other balls or the cue ball were also potted or left the table." },
+        { "ref": "4(e)", "tags": "group nominate choose stripes solids first pot both groups",
+          "text": "The first object ball a player legally pots (including after a foul) sets their group. If balls from both groups are potted on that shot, the player must nominate a group before play continues." },
+        { "ref": "4(f)", "tags": "open table groups undecided nothing potted break",
+          "text": "If no object ball is potted from a legal break, players take turns playing at either group until someone makes a legal pot, which decides the groups." },
+        { "ref": "4(g)", "tags": "foul before groups decided open table any ball first shot",
+          "text": "If a foul happens (other than the 8 on the break) and balls are potted before groups have been decided, those balls are ignored when deciding groups. The incoming player may play any ball, including the 8, on the first shot, and the first legal pot then decides the groups." },
+        { "ref": "4(h)", "tags": "continue another shot turn visit keep going",
+          "text": "A legal pot earns another shot. A player keeps shooting until they fail to pot one of their own balls or commit a foul." },
+        { "ref": "4(i)", "tags": "combination shot first ball hit",
+          "text": "Combination shots are allowed as long as the first ball hit is one of your own group, or any ball on the first shot after a foul (see 6(c))." }
+      ]
+    },
+    {
+      "id": "5", "title": "5. Fouls",
+      "rules": [
+        { "ref": "5(a)", "tags": "in off scratch cue ball potted pocket", "text": "In off: the cue ball is potted." },
+        { "ref": "5(b)", "tags": "hit opponent ball first wrong ball", "text": "Hitting an opponent's ball first with the cue ball, except on the first shot after a foul." },
+        { "ref": "5(c)", "tags": "miss fail to hit no contact air shot", "text": "Failing to hit any ball with the cue ball." },
+        { "ref": "5(d)", "tags": "jump shot jump over ball", "text": "Jump shot: the cue ball jumps over any part of a ball before it contacts a ball." },
+        { "ref": "5(e)", "tags": "hit black 8 first early eight", "text": "Hitting the 8 first before all of your own balls are potted, except on the first shot after a foul." },
+        { "ref": "5(f)", "tags": "pot opponent ball opponents balls potted", "text": "Potting any of the opponent's balls, except on the first shot after a foul." },
+        { "ref": "5(g1)", "tags": "ball off the table jumped off object ball respot spot",
+          "text": "An object ball or the 8 that goes off the table is returned to the 8-ball spot, or as near as possible to it without touching another ball, on the line between that spot and the centre of the baulk line." },
+        { "ref": "5(g2)", "tags": "cue ball off the table jumped off in hand",
+          "text": "If the cue ball goes off the table, it is played from hand (see 8(b)). A ball counts as off the table if it comes to rest anywhere other than on the bed of the table." },
+        { "ref": "5(h)", "tags": "touch ball clothing sleeve body moved ball",
+          "text": "Clothing or body touching any ball. The one exception is the cue ball after the referee has called a foul and the player is entitled to cue ball in hand (see 6(b))." },
+        { "ref": "5(i)", "tags": "foot floor feet off the ground sitting",
+          "text": "Not having at least one foot on the floor." },
+        { "ref": "5(j)", "tags": "touch other ball with cue",
+          "text": "Playing or touching with the cue any ball other than the cue ball." },
+        { "ref": "5(k)", "tags": "ferrule shaft side of cue not tip",
+          "text": "Striking the cue ball with any part of the cue other than the tip." },
+        { "ref": "5(l)", "tags": "out of turn wrong player",
+          "text": "Playing out of turn." },
+        { "ref": "5(m)", "tags": "moving balls not at rest too early",
+          "text": "Playing before the balls have come to rest." },
+        { "ref": "5(n)", "tags": "respot before replaced",
+          "text": "Playing before balls that need re-spotting have been re-spotted." },
+        { "ref": "5(o)", "tags": "double hit twice",
+          "text": "Striking the cue ball with the cue more than once." },
+        { "ref": "5(p)", "tags": "push stroke tip contact",
+          "text": "Push stroke: the tip is still touching the cue ball when it makes contact with the object ball, or the tip stays obviously in contact once the cue ball has started moving forward." },
+        { "ref": "5(q)", "tags": "nominate group both groups potted forgot",
+          "text": "Failing to nominate a group when balls of both groups are potted with the first legal pot." },
+        { "ref": "5(r)", "tags": "foul break cushions two balls",
+          "text": "Foul break: failing to pot an object ball or drive at least two object balls to a cushion." }
+      ]
+    },
+    {
+      "id": "6", "title": "6. Penalty after a foul",
+      "rules": [
+        { "ref": "6(a)", "tags": "penalty lose visit two visits",
+          "text": "After any foul, the player who fouled loses their next visit to the table, so their opponent gets two visits." },
+        { "ref": "6(b)", "tags": "cue ball in hand two visits baulk line where it lies ask referee",
+          "text": "With two visits, the player can play the cue ball from where it lies if it is on the table, or play it from any position on or behind the baulk line. Moving the cue ball this way does not count as a shot or a visit. Ask the referee to hand you the cue ball." },
+        { "ref": "6(c)", "tags": "first shot after foul any ball without penalty second visit",
+          "text": "On the first shot of the first visit only, the incoming player may play the cue ball onto any ball without penalty, including an opponent's ball or the 8. If they don't pot a ball during that first visit, play moves on to their second visit, which starts when the cue ball is struck for the first shot of that visit." }
+      ]
+    },
+    {
+      "id": "7", "title": "7. Losing the frame",
+      "rules": [
+        { "ref": "7(a)", "tags": "lose game early 8 black potted too soon",
+          "text": "Potting the 8 before all the balls of your own group are down loses the frame, except on the break (see 4(d))." },
+        { "ref": "7(b)", "tags": "foul while potting 8 black lose",
+          "text": "Committing any foul while potting the 8 loses the frame, except on the break (see 4(d))." },
+        { "ref": "7(c)", "tags": "pot 8 and another ball same shot lose exception after foul only 8 left",
+          "text": "Potting the 8 and any other ball on the same shot loses the frame. The exception is after a foul when only the 8 and ball(s) of the opponent's group are left on the table: then, with the first shot of the first visit, the player may legally pot the 8 along with ball(s) by any combination and in any order." },
+        { "ref": "7(d)", "tags": "no attempt to play own ball deliberately lose",
+          "text": "A player who clearly makes no attempt to play a ball of their own group loses the frame." }
+      ]
+    },
+    {
+      "id": "8", "title": "8. General",
+      "rules": [
+        { "ref": "8(a1)", "tags": "cue ball touching object ball frozen play away",
+          "text": "If the cue ball is touching an object ball, you must play away from it. Moving that object ball is a foul." },
+        { "ref": "8(a2)", "tags": "cue ball touching ball legal to play deemed played frozen",
+          "text": "If the cue ball is touching any ball you are legally allowed to play, you are deemed to have played that ball. If the cue ball then fails to contact any ball, or strikes an opponent's ball or the 8, the shot is fair and not a foul." },
+        { "ref": "8(b)", "tags": "cue ball in hand baulk line place",
+          "text": "Cue ball in hand: it is played from any position on or behind the baulk line, in any direction." },
+        { "ref": "8(c)", "tags": "player in control table touch ball falls in pocket after foul",
+          "text": "A player is in control of the table from the moment their body, cue or clothing touches the table before their shot, through their whole visit, until the opponent does the same before theirs. Any ball (including the 8) that drops into a pocket in that time counts as potted, and the player in control takes the penalty or benefit. Once the cue ball has been struck, a legal shot must be completed, and a ball falling in does NOT cancel out a foul." },
+        { "ref": "8(d)", "tags": "frame over game complete 8 black potted rest",
+          "text": "The frame is complete when the 8 is potted in any pocket and all the remaining balls have come to rest, except on the break (see 4(d))." }
+      ]
+    },
+    {
+      "id": "9", "title": "9. Stalemate",
+      "rules": [
+        { "ref": "9", "tags": "stalemate no legal shot restart re-rack stuck safety battle",
+          "text": "If a legal shot cannot be played, by accident or design, the frame is restarted by the player who started that frame. The referee should not allow many visits where neither player tries the opening pot that decides the groups (unless progress is being made). If that player started the frame because the opponent fouled the break, they break again on the restart, not the opponent who fouled." }
+      ]
+    },
+    {
+      "id": "10", "title": "10. Guidance",
+      "rules": [
+        { "ref": "10(a)", "tags": "definition shot", "text": "A 'shot' means striking the ball once." },
+        { "ref": "10(b)", "tags": "definition visit turn", "text": "A 'visit' is one turn at the table, made up of one shot or a series of shots." },
+        { "ref": "10(c)", "tags": "definition break", "text": "The 'break' is the first shot of a frame, or the first shot of a frame being restarted." },
+        { "ref": "10(d)", "tags": "coaching advice help unsporting",
+          "text": "Coaching counts as unsportsmanlike behaviour (see rule 1)." },
+        { "ref": "10(e)", "tags": "referee advise rules asked",
+          "text": "A referee may advise on the rules, but only if asked." },
+        { "ref": "10(f)", "tags": "nominate group breaker obligation",
+          "text": "Both players are obliged to make sure the breaking player nominates a group of object balls." },
+        { "ref": "10(g)", "tags": "slow play time excessive",
+          "text": "The referee should make sure nobody takes excessive time over a shot, acting in line with the competition rules or guidance." },
+        { "ref": "10(h)", "tags": "doubles talking partner conversation coaching",
+          "text": "In doubles, once a player is in control of the table, conversation with anyone else, including their partner, is unsporting." }
+      ]
+    }
+  ]
+}
