@@ -38,17 +38,17 @@ window.RD = {
   // e.g. "3S-W" = won their week 3 singles frame, "3D-L" = lost their week 3 doubles frame.
   // The site works out played / won / win % / form from this list.
   players: [
-    { ball: 1, name: "Tom",    full: "Tom Hughes",     captain: true, results: ["1S-W","1D-L","2S-W","2D-W"] },
-    { ball: 2, name: "Nic",    full: "Nic Light",      results: ["1S-L","1D-W","2S-W","2D-W"] },
-    { ball: 3, name: "Dave",   results: [] },
+    { ball: 1, name: "Tom",    full: "Tom Hughes",     captain: true, results: ["1S-W","1D-L","2S-W","2D-W","3S-L"] },
+    { ball: 2, name: "Nic",    full: "Nic Light",      results: ["1S-L","1D-W","2S-W","2D-W","3S-W","3D-L"] },
+    { ball: 3, name: "Dave",   results: ["3S-W","3D-W"] },
     { ball: 4, name: "Darren", full: "Darren Baillie", results: ["1S-W","1D-W","2S-W","2D-W"] },
     { ball: 5, name: "Ron",    results: [] },
-    { ball: 6, name: "Göran",  full: "Göran Nielsen",  results: ["1S-L","1D-L","2S-L","2D-W"] },
-    { ball: 7, name: "Bob",    full: "Bob Whelan",     results: ["1S-W","1D-L","2S-W","2D-W"] },
-    { ball: 8, name: "Michel", full: "Michel Catozzi", results: ["1S-L","1D-L","2S-W","2D-W"] },
+    { ball: 6, name: "Göran",  full: "Göran Nielsen",  results: ["1S-L","1D-L","2S-L","2D-W","3S-L"] },
+    { ball: 7, name: "Bob",    full: "Bob Whelan",     results: ["1S-W","1D-L","2S-W","2D-W","3S-L","3D-L"] },
+    { ball: 8, name: "Michel", full: "Michel Catozzi", results: ["1S-L","1D-L","2S-W","2D-W","3S-W","3D-W"] },
     { ball: 9, name: "Alan",   results: [] },
-    { ball: 11, name: "Alvaro", results: [] },
-    { ball: 12, name: "Ana",    results: [] }
+    { ball: 11, name: "Alvaro", results: ["3D-L"] },
+    { ball: 12, name: "Ana",    results: ["3D-L"] }
   ],
 
   // ---------- OFFICIAL LEAGUE PLAYER RANKING ----------
@@ -69,7 +69,7 @@ window.RD = {
   fixtures: [
     { wk: "1",     date: "2026-10-15", venue: "away", opp: "Royal Oak",              result: { us: 4, them: 6 } },
     { wk: "2",     date: "2026-10-22", venue: "home", opp: "Captain 'N",             result: { us: 9, them: 1 } },
-    { wk: "3",     date: "2026-10-29", venue: "home", opp: "Wobbly Dix",             result: null },
+    { wk: "3",     date: "2026-10-29", venue: "home", opp: "Wobbly Dix",             result: { us: 4, them: 6 } },
     { wk: "4",     date: "2026-11-05", venue: "bye",  opp: "Rest week",              result: null },
     { wk: "5",     date: "2026-11-12", venue: "home", opp: "Boulevard",              result: null },
     { wk: "6",     date: "2026-11-19", venue: "away", opp: "Smokeys Men",            result: null },
