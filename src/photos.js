@@ -40,7 +40,7 @@ export async function handlePhotos(request, env, url) {
       if (count >= MAX_PHOTOS) return json({ error: "The album is full." }, 507);
       const ts = Date.now();
       const nid = String(ts).padStart(13, "0") + "-" + crypto.randomUUID().slice(0, 6);
-      const meta = { ts, by: clean(form.get("name"), 30), caption: clean(form.get("caption"), 140), type };
+      const meta = { v: 2, ts, by: clean(form.get("name"), 30), caption: clean(form.get("caption"), 140), type };
       const token = crypto.randomUUID() + crypto.randomUUID();
       await kv.put("k:" + nid, await sha(token));
       await kv.put("p:" + nid, bytes, { metadata: meta });
@@ -58,6 +58,7 @@ export async function handlePhotos(request, env, url) {
   if (request.method === "DELETE") {
     const code = request.headers.get("x-team-code"), tok = request.headers.get("x-delete-token");
     let ok = false;
+    if (!(await kv.get("k:" + id))) ok = true;   // early photos from before owners were tracked: anyone can remove them
     if (tok) { const h = await kv.get("k:" + id); ok = !!h && h === (await sha(tok)); }
     if (!ok && code) ok = !!env.TEAM_CODE && code === env.TEAM_CODE;
     if (!ok) return json({ error: tok ? "Only the person who added this photo can delete it." : env.TEAM_CODE ? "Wrong team code." : "Deleting isn't set up." }, tok || env.TEAM_CODE ? 401 : 403);

@@ -87,7 +87,7 @@
     var p = photos[cur];
     box.querySelector("img").src = "/api/photos/" + p.id;
     box.querySelector("img").alt = p.caption || "Royal Dix photo";
-    var d = box.querySelector(".lb-del"); if (d) { d.textContent = mine[p.id] ? "Delete my photo" : "Delete (captain)"; d.hidden = false; var pn = box.querySelector(".lb-pane"); if (pn) pn.hidden = true; var st0 = box.querySelector(".lb-st"); if (st0) st0.textContent = ""; }
+    var d = box.querySelector(".lb-del"); if (d) { d.textContent = (mine[p.id] || !p.v) ? "Delete photo" : "Delete (captain)"; d.hidden = false; var pn = box.querySelector(".lb-pane"); if (pn) pn.hidden = true; var st0 = box.querySelector(".lb-st"); if (st0) st0.textContent = ""; }
     var when = p.ts ? new Date(p.ts).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : "";
     box.querySelector(".lb-cap").innerHTML = (p.caption ? "<b>" + esc(p.caption) + "</b>" : "") + "<span>" + esc([p.by ? "Added by " + p.by : "", when].filter(Boolean).join(" · ")) + "</span>";
   }
@@ -107,7 +107,7 @@
     var ask = function (t, bad) { st.textContent = t || ""; st.className = "lb-st" + (bad ? " bad" : ""); };
     var doDelete = function (c) {
       ask("Deleting…");
-      var id0 = photos[cur].id, h = mine[id0] ? { "x-delete-token": mine[id0] } : { "x-team-code": c };
+      var id0 = photos[cur].id, h = mine[id0] ? { "x-delete-token": mine[id0] } : photos[cur].v ? { "x-team-code": c } : {};
       fetch("/api/photos/" + id0, { method: "DELETE", headers: h }).then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (j) {
           if (r.ok) { if (mine[id0]) { delete mine[id0]; keep(); } else code = c; close(); load(); return; }
@@ -118,8 +118,8 @@
       }, function () { ask("No connection. Try again.", true); });
     };
     del.onclick = function () {
-      if (mine[photos[cur].id]) {
-        if (del.getAttribute("data-sure") !== "1") { del.setAttribute("data-sure", "1"); del.textContent = "Tap again to delete this photo"; setTimeout(function () { if (del.getAttribute("data-sure") === "1") { del.removeAttribute("data-sure"); del.textContent = "Delete my photo"; } }, 4000); return; }
+      if (mine[photos[cur].id] || !photos[cur].v) {
+        if (del.getAttribute("data-sure") !== "1") { del.setAttribute("data-sure", "1"); del.textContent = "Tap again to delete this photo"; setTimeout(function () { if (del.getAttribute("data-sure") === "1") { del.removeAttribute("data-sure"); del.textContent = "Delete photo"; } }, 4000); return; }
         del.removeAttribute("data-sure"); doDelete(""); return;
       }
       if (code) { doDelete(code); return; }
