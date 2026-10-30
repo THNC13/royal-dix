@@ -169,7 +169,7 @@
   var LR = D.leagueRanking || { published: false, rows: [] };
   var lrRows = LR.rows || [];
   if (LR.published && lrRows.length) {
-    $("lr-sub").textContent = "The league's own player ranking, singles frames only" + (LR.afterWeek ? ", after week " + LR.afterWeek : "") + ".";
+    $("lr-sub").textContent = (LR.computed ? "Every player in the league, singles frames only, worked out from the published results" : "The league's own player ranking, singles frames only") + (LR.afterWeek ? ", after week " + LR.afterWeek : "") + ". Ranked on win %, then frames won." + (LR.computed ? " The league hasn't posted its own ranking yet." : "");
     $("lr-table").hidden = false;
     $("lr-body").innerHTML = lrRows.map(function (r, i) {
       var pc = r.gp > 0 ? Math.round((r.w / r.gp) * 100) + "%" : "–";
