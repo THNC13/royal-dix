@@ -13,7 +13,7 @@ window.RD = {
   lastUpdated: "2026-10-30",
   leagueAfterWeek: 2,
   // Set while a week is only part-entered (clears when the full week is in). Shown under the league table.
-  leaguePartial: "Week 3 so far: Royal Dix v Wobbly Dix and Smokeys Men v Smokeys Hot Shotz are in. Other matches to follow.",
+  leaguePartial: "Week 3 so far: Royal Dix v Wobbly Dix, Smokeys Men v Smokeys Hot Shotz and Captain 'N v El Barquito are in. Other matches to follow.",
 
   // ---------- LEAGUE TABLE ----------
   // Keep rows in the same order as the official table (the site does not re-sort).
@@ -21,17 +21,18 @@ window.RD = {
   // f = frames for, a = frames against, pts = league points
   league: [
     { team: "Smokeys Men",            p: 3, w: 3, l: 0, f: 23, a: 4,  pts: 26 },
+    { team: "El Barquito",            p: 3, w: 3, l: 0, f: 19, a: 8,  pts: 22 },
     { team: "Wobbly Dix",             p: 3, w: 2, l: 1, f: 16, a: 11, pts: 18 },
     { team: "Royal Dix",              p: 3, w: 1, l: 2, f: 16, a: 11, pts: 17, us: true },
     { team: "Boulevard",              p: 2, w: 2, l: 0, f: 14, a: 4,  pts: 16 },
-    { team: "El Barquito",            p: 2, w: 2, l: 0, f: 13, a: 5,  pts: 15 },
     { team: "Royal Oak",              p: 2, w: 2, l: 0, f: 10, a: 8,  pts: 12 },
     { team: "Churchills",             p: 2, w: 0, l: 2, f: 6,  a: 12, pts: 6 },
     { team: "Smokeys Hot Shotz",      p: 2, w: 0, l: 2, f: 4,  a: 14, pts: 4 },
+    { team: "Captain 'N",             p: 3, w: 0, l: 3, f: 4,  a: 23, pts: 4 },
     { team: "Penguin Potters",        p: 1, w: 0, l: 1, f: 3,  a: 6,  pts: 3 },
-    { team: "Churchills Pink Ladies", p: 2, w: 0, l: 2, f: 2,  a: 16, pts: 2 },
-    { team: "Captain 'N",             p: 2, w: 0, l: 2, f: 1,  a: 17, pts: 1 }
+    { team: "Churchills Pink Ladies", p: 2, w: 0, l: 2, f: 2,  a: 16, pts: 2 }
   ],
+
 
 
   // ---------- PLAYERS ----------
