@@ -10,26 +10,27 @@ window.RD = {
   team: "Royal Dix",
   leagueName: "Econ Winter Pool League",
   season: "2026/27",
-  lastUpdated: "2026-10-30",
-  leagueAfterWeek: 3,
+  lastUpdated: "2026-11-07",
+  leagueAfterWeek: 4,
 
   // ---------- LEAGUE TABLE ----------
   // Keep rows in the same order as the official table (the site does not re-sort).
   // p = matches played, w = matches won, l = matches lost,
   // f = frames for, a = frames against, pts = league points
   league: [
-    { team: "Smokeys Men",              p: 3, w: 3, l: 0, f: 23, a: 4, pts: 26 },
-    { team: "El Barquito",              p: 3, w: 3, l: 0, f: 19, a: 8, pts: 22 },
-    { team: "Royal Oak",                p: 3, w: 3, l: 0, f: 17, a: 10, pts: 20 },
-    { team: "Boulevard",                p: 3, w: 2, l: 1, f: 17, a: 10, pts: 19 },
-    { team: "Wobbly Dix",               p: 3, w: 2, l: 1, f: 16, a: 11, pts: 18 },
+    { team: "Smokeys Men",              p: 4, w: 4, l: 0, f: 28, a: 8, pts: 32 },
+    { team: "Royal Oak",                p: 4, w: 4, l: 0, f: 25, a: 11, pts: 29 },
+    { team: "El Barquito",              p: 4, w: 3, l: 1, f: 23, a: 13, pts: 26 },
+    { team: "Boulevard",                p: 4, w: 3, l: 1, f: 23, a: 13, pts: 26 },
+    { team: "Wobbly Dix",               p: 4, w: 3, l: 1, f: 21, a: 15, pts: 24 },
+    { team: "Churchills",               p: 4, w: 2, l: 2, f: 21, a: 15, pts: 23 },
     { team: "Royal Dix",                p: 3, w: 1, l: 2, f: 16, a: 11, pts: 17, us: true },
-    { team: "Churchills",               p: 3, w: 1, l: 2, f: 12, a: 15, pts: 13 },
-    { team: "Penguin Potters",          p: 2, w: 0, l: 2, f: 5, a: 13, pts: 5 },
-    { team: "Captain 'N",               p: 3, w: 0, l: 3, f: 4, a: 23, pts: 4 },
-    { team: "Smokeys Hot Shotz",        p: 2, w: 0, l: 2, f: 4, a: 14, pts: 4 },
-    { team: "Churchills Pink Ladies",   p: 2, w: 0, l: 2, f: 2, a: 16, pts: 2 }
+    { team: "Penguin Potters",          p: 3, w: 0, l: 3, f: 9, a: 18, pts: 9 },
+    { team: "Captain 'N",               p: 4, w: 0, l: 4, f: 7, a: 29, pts: 7 },
+    { team: "Smokeys Hot Shotz",        p: 3, w: 0, l: 3, f: 5, a: 22, pts: 5 },
+    { team: "Churchills Pink Ladies",   p: 3, w: 0, l: 3, f: 2, a: 25, pts: 2 }
   ],
+
 
 
 
