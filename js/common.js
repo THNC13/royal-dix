@@ -84,7 +84,7 @@
       us.pos >= 5 ? "We’re " + K.ordinal(us.pos) + ", lads. We need a big win tonight!" :
       "We’re " + K.ordinal(us.pos) + ", lads. A win today and we’ll be right up there!";
     popup = { k: "Match day", vs: [home ? D.team : todays.opp, home ? todays.opp : D.team], tag: todays.venue, when: "Tonight", msg: pep,
-      pos: them && us ? [todays.opp + " · " + K.ordinal(them.pos) + " · " + them.t.pts + " pts", D.team + " · " + K.ordinal(us.pos) + " · " + us.t.pts + " pts"] : null, btn: "Let’s go" };
+      pos: them && us ? [todays.opp + " · " + K.ordinal(them.pos) + " · " + them.t.pts + " pts", D.team + " · " + K.ordinal(us.pos) + " · " + us.t.pts + " pts"] : null, btn: "Let’s go!" };
     popupKey = "day-" + todays.date;
   } else if (kind === "result") {
     var r = last.result, won = r.us > r.them, lost = r.us < r.them, tableFresh = D.leagueAfterWeek && String(D.leagueAfterWeek) >= String(last.wk);
