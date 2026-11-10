@@ -71,7 +71,7 @@
   };
 
   var upDays = nextF ? Math.round((K.dateOf(nextF).getTime() - T) / DAY) : null;
-  var kind = todays ? "day" : (last && Math.round((T - K.dateOf(last).getTime()) / DAY) <= 6 && (upDays === null || upDays > 1)) ? "result" : (nextF && upDays === 1) ? "eve" : "";
+  var kind = todays ? "day" : (last && Math.round((T - K.dateOf(last).getTime()) / DAY) <= 6 && (upDays === null || upDays > 1)) ? "result" : (nextF && upDays === 1) ? "eve" : (nextF && upDays > 1 && upDays <= 6) ? "week" : "";
   var tickerItems = [], popup = null, popupKey = "";
 
   if (kind === "day") {
@@ -81,6 +81,7 @@
     if (us) tickerItems.push(D.team + " are " + K.ordinal(us.pos) + " on " + us.t.pts + " pts");
     var pep = !us ? "Let’s get after it, lads." :
       us.pos <= 3 ? "We’re " + K.ordinal(us.pos) + ", lads. Keep it going tonight!" :
+      us.pos >= 5 ? "We’re " + K.ordinal(us.pos) + ", lads. We need a big win tonight!" :
       "We’re " + K.ordinal(us.pos) + ", lads. A win today and we’ll be right up there!";
     popup = { k: "Match day", vs: [home ? D.team : todays.opp, home ? todays.opp : D.team], tag: todays.venue, when: "Tonight", msg: pep,
       pos: them && us ? [todays.opp + " · " + K.ordinal(them.pos) + " · " + them.t.pts + " pts", D.team + " · " + K.ordinal(us.pos) + " · " + us.t.pts + " pts"] : null, btn: "Let’s go" };
@@ -94,11 +95,21 @@
     popup = { k: won ? "Full time · Win" : lost ? "Full time" : "Full time · Draw", vs: [sc[0] + " " + sc[1], sc[2] + " " + sc[3]], tag: last.venue, when: K.fmtDate(last.date), msg: line,
       pos: [nextLine(K.dateOf(last).getTime())], btn: won ? "Onwards" : "We go again", vsScore: true };
     popupKey = "res-" + last.date;
-  } else if (kind === "eve") {
-    tickerItems = ["Match tomorrow", D.team + " " + (nextF.venue === "home" ? "v " + nextF.opp : "away at " + nextF.opp), "Thursday night", "Get your eye in"];
-    popup = { k: "Match tomorrow", vs: [nextF.venue === "home" ? D.team : nextF.opp, nextF.venue === "home" ? nextF.opp : D.team], tag: nextF.venue, when: dShort(nextF),
-      msg: "Early night, chalk up, and let’s go again.", pos: null, btn: "Right then" };
-    popupKey = "eve-" + nextF.date;
+  } else if (kind === "eve" || kind === "week") {
+    var nh = nextF.venue === "home", nopp = K.rowOf(nextF.opp), nus = K.rowOf(D.team);
+    var bigWin = !!nus && nus.pos >= 5;
+    var wkMsg = bigWin ? "We\u2019re " + K.ordinal(nus.pos) + ", lads. We need a big win!" : nus ? "We\u2019re " + K.ordinal(nus.pos) + ", lads. Let\u2019s keep it going!" : "Let\u2019s go again, lads.";
+    var game = nh ? D.team + " v " + nextF.opp : D.team + " away at " + nextF.opp;
+    if (kind === "eve") {
+      tickerItems = ["Match tomorrow", game, bigWin ? "Big win needed" : "Get your eye in"];
+    } else {
+      tickerItems = ["This week", game, dShort(nextF), bigWin ? "Big win needed" : "Let\u2019s go"];
+    }
+    popup = { k: kind === "eve" ? "Match tomorrow" : "This week", vs: [nh ? D.team : nextF.opp, nh ? nextF.opp : D.team], tag: nextF.venue, when: dShort(nextF),
+      msg: wkMsg,
+      pos: nopp && nus ? [nextF.opp + " \u00b7 " + K.ordinal(nopp.pos) + " \u00b7 " + nopp.t.pts + " pts", D.team + " \u00b7 " + K.ordinal(nus.pos) + " \u00b7 " + nus.t.pts + " pts"] : null,
+      btn: bigWin ? "Big win it is" : "Right then" };
+    popupKey = kind + "-" + nextF.date;
   }
   if (kind === "result" && Math.round((T - K.dateOf(last).getTime()) / DAY) > 3) tickerItems = [];   // ticker only for the first few days after a match
 
