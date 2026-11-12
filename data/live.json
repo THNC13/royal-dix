@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Singles 3 in play",
+  "status": "Singles 4 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -22,13 +22,13 @@
       "label": "Singles 3",
       "us": "Michel Catozzi",
       "them": "Martyn Hirst",
-      "r": "live"
+      "r": "L"
     },
     {
       "label": "Singles 4",
       "us": "Nic Light",
       "them": "Johannes Hoj",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 5",
@@ -61,6 +61,6 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-12T21:04",
+  "updated": "2026-11-12T21:27",
   "start": "2026-11-12T20:30:00+01:00"
 }
