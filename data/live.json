@@ -4,19 +4,19 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Singles 1 in play",
+  "status": "Singles 2 in play",
   "frames": [
     {
       "label": "Singles 1",
       "us": "Darren Baillie",
       "them": "Alex Thibau",
-      "r": "live"
+      "r": "W"
     },
     {
       "label": "Singles 2",
       "us": "Bob Whelan",
       "them": "Kim Jensen",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 3",
@@ -61,6 +61,6 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-12T20:30",
+  "updated": "2026-11-12T20:45",
   "start": "2026-11-12T20:30:00+01:00"
 }
