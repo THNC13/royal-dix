@@ -1,65 +1,65 @@
 {
   "on": true,
-  "wk": 3,
-  "opp": "Wobbly Dix",
+  "wk": 5,
+  "date": "2026-11-12",
+  "opp": "Boulevard",
   "venue": "home",
-  "status": "Full time",
+  "status": "Starting soon",
   "frames": [
     {
       "label": "Singles 1",
-      "us": "Göran",
-      "them": "Steve",
-      "r": "L"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Singles 2",
-      "us": "Bob",
-      "them": "Alfredo",
-      "r": "L"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Singles 3",
-      "us": "Dave",
-      "them": "Tanja",
-      "r": "W"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Singles 4",
-      "us": "Michel",
-      "them": "Pete",
-      "r": "W"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Singles 5",
-      "us": "Nic",
-      "them": "Ramona",
-      "r": "W"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Singles 6",
-      "us": "Tom",
-      "them": "Andrea",
-      "r": "L"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Doubles 1",
-      "us": "Alvaro & Nic",
-      "them": "Steve & Ramona",
-      "r": "L"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Doubles 2",
-      "us": "Dave & Michel",
-      "them": "Tanja & Alfredo",
-      "r": "W"
+      "us": "",
+      "them": "",
+      "r": ""
     },
     {
       "label": "Doubles 3",
-      "us": "Bob & Ana",
-      "them": "Pete & Andrea",
-      "r": "L"
+      "us": "",
+      "them": "",
+      "r": ""
     }
   ],
-  "updated": "2026-10-29T23:40:00+01:00",
-  "date": "2026-10-29"
+  "updated": "2026-11-12T18:50:00+01:00"
 }
