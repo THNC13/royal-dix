@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Singles 6 in play",
+  "status": "Doubles 1 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -40,27 +40,27 @@
       "label": "Singles 6",
       "us": "Dave Cross",
       "them": "Allan Pedersen",
-      "r": "live"
+      "r": "W"
     },
     {
       "label": "Doubles 1",
-      "us": "",
-      "them": "",
-      "r": ""
+      "us": "Bob Whelan & Michel Catozzi",
+      "them": "Alex Thibau & Kim Jensen",
+      "r": "live"
     },
     {
       "label": "Doubles 2",
-      "us": "",
-      "them": "",
+      "us": "Göran Nielsen & Alvaro Jimenez",
+      "them": "Martyn Hirst & Johannes Hoj",
       "r": ""
     },
     {
       "label": "Doubles 3",
-      "us": "",
-      "them": "",
+      "us": "Tom Hughes & Nic Light",
+      "them": "Kurt Petersen & Allan Pedersen",
       "r": ""
     }
   ],
-  "updated": "2026-11-12T21:53",
+  "updated": "2026-11-12T22:15",
   "start": "2026-11-12T20:30:00+01:00"
 }
