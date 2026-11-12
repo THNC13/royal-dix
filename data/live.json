@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Singles 2 in play",
+  "status": "Singles 3 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -16,13 +16,13 @@
       "label": "Singles 2",
       "us": "Bob Whelan",
       "them": "Kim Jensen",
-      "r": "live"
+      "r": "L"
     },
     {
       "label": "Singles 3",
       "us": "Michel Catozzi",
       "them": "Martyn Hirst",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 4",
@@ -61,6 +61,6 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-12T20:45",
+  "updated": "2026-11-12T21:04",
   "start": "2026-11-12T20:30:00+01:00"
 }
