@@ -595,3 +595,5 @@ body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-ins
   .lv-frames li { grid-template-columns: minmax(104px, auto) 1fr auto; }
   .lv-frames .n { white-space: nowrap; }
 }
+/* no auto-linking of venues, dates or numbers on phones */
+.sb, .sb *, .live, .live *, .fx, .fx *, #next, #next * { -webkit-touch-callout: none; }
