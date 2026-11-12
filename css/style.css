@@ -562,3 +562,7 @@ main > .block:first-child { padding-top: 40px; }
 @media (max-width: 560px) { .lb { padding-bottom: 140px; } }
 .lb-pane[hidden], .lb-st:empty { display: none !important; }
 .lb-del[hidden] { display: none !important; }
+
+.lv-count { display: flex; justify-content: center; align-items: baseline; gap: 4px; margin: 16px 0 6px; font-family: var(--display); color: #fff; font-variant-numeric: tabular-nums; }
+.lv-count b { font-weight: 400; font-size: clamp(40px, 12vw, 60px); line-height: 1; }
+.lv-count i { font-style: normal; font: 600 1.1rem var(--cond); color: var(--brass-hi); margin: 0 10px 0 2px; text-transform: uppercase; }
