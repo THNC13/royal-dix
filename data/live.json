@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Doubles 3 won",
+  "status": "Full time",
   "frames": [
     {
       "label": "Singles 1",
@@ -52,7 +52,7 @@
       "label": "Doubles 2",
       "us": "Göran Nielsen & Alvaro Jimenez",
       "them": "Martyn Hirst & Johannes Hoj",
-      "r": "live"
+      "r": "L"
     },
     {
       "label": "Doubles 3",
@@ -61,6 +61,6 @@
       "r": "W"
     }
   ],
-  "updated": "2026-11-13T00:54",
+  "updated": "2026-11-13T00:55",
   "start": "2026-11-12T20:30:00+01:00"
 }
