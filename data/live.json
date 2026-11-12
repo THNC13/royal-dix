@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Doubles 2 in play",
+  "status": "Doubles 3 won",
   "frames": [
     {
       "label": "Singles 1",
@@ -58,9 +58,9 @@
       "label": "Doubles 3",
       "us": "Tom Hughes & Nic Light",
       "them": "Kurt Petersen & Allan Pedersen",
-      "r": ""
+      "r": "W"
     }
   ],
-  "updated": "2026-11-12T22:37",
+  "updated": "2026-11-13T00:54",
   "start": "2026-11-12T20:30:00+01:00"
 }
