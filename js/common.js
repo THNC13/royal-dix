@@ -88,7 +88,7 @@
     popupKey = "day-" + todays.date;
   } else if (kind === "result") {
     var r = last.result, won = r.us > r.them, lost = r.us < r.them, tableFresh = D.leagueAfterWeek && String(D.leagueAfterWeek) >= String(last.wk);
-    var line = won ? "What a night, lads! Brilliant work." :
+    var line = won ? "Great win, guys! Brilliant work." :
       lost ? "We lost this one, but we go again. Chins up, Royal Dix." : "Honours even. We take the point and go again.";
     var home2 = last.venue === "home", sc = home2 ? [D.team, r.us, r.them, last.opp] : [last.opp, r.them, r.us, D.team];
     tickerItems = ["Full time", sc[0] + " " + sc[1] + "–" + sc[2] + " " + sc[3], won ? "Great win" : lost ? "We go again" : "A point each", nextLine(K.dateOf(last).getTime())];
