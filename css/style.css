@@ -566,3 +566,32 @@ main > .block:first-child { padding-top: 40px; }
 .lv-count { display: flex; justify-content: center; align-items: baseline; gap: 4px; margin: 16px 0 6px; font-family: var(--display); color: #fff; font-variant-numeric: tabular-nums; }
 .lv-count b { font-weight: 400; font-size: clamp(40px, 12vw, 60px); line-height: 1; }
 .lv-count i { font-style: normal; font: 600 1.1rem var(--cond); color: var(--brass-hi); margin: 0 10px 0 2px; text-transform: uppercase; }
+
+/* ---- Phone polish ---- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+button, a, .tb a { touch-action: manipulation; }
+body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+.foot { padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+@media (max-width: 560px) {
+  .hero { align-items: flex-start; min-height: 0; padding-top: 4px; }
+  .stage { height: 31em; }
+  .logo { width: 25em; height: 25em; }
+  .live, .sb { margin-top: 10px; }
+  .hint-home { padding-bottom: 20px; }
+  a, button { min-height: 40px; }
+  .foot a, p a, li a, td a { min-height: 0; }
+  .tb { scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  .tb a { scroll-snap-align: center; }
+  input, select, textarea { font-size: 16px; } /* stops iOS zooming on focus */
+}
+@media (max-width: 560px) {
+  /* live score: team names above the score so long names never break mid-word */
+  .lv-score { grid-template-columns: 1fr auto 1fr; gap: 6px; }
+  .lv-score > div { flex-direction: column; gap: 2px; }
+  .lv-score span { font-size: .95rem; overflow-wrap: normal; word-break: normal; hyphens: none; }
+  .lv-frames li { grid-template-columns: 92px 1fr auto; padding: 11px 10px; }
+}
+@media (max-width: 560px) {
+  .lv-frames li { grid-template-columns: minmax(104px, auto) 1fr auto; }
+  .lv-frames .n { white-space: nowrap; }
+}
