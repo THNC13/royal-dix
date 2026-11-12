@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Singles 4 in play",
+  "status": "Singles 5 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -28,13 +28,13 @@
       "label": "Singles 4",
       "us": "Nic Light",
       "them": "Johannes Hoj",
-      "r": "live"
+      "r": "W"
     },
     {
       "label": "Singles 5",
       "us": "Tom Hughes",
       "them": "Kurt Petersen",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 6",
@@ -61,6 +61,6 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-12T21:27",
+  "updated": "2026-11-12T21:38",
   "start": "2026-11-12T20:30:00+01:00"
 }
