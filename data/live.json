@@ -4,42 +4,42 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Starting soon",
+  "status": "Singles 1 in play",
   "frames": [
     {
       "label": "Singles 1",
-      "us": "",
-      "them": "",
-      "r": ""
+      "us": "Darren Baillie",
+      "them": "Alex Thibau",
+      "r": "live"
     },
     {
       "label": "Singles 2",
-      "us": "",
-      "them": "",
+      "us": "Bob Whelan",
+      "them": "Kim Jensen",
       "r": ""
     },
     {
       "label": "Singles 3",
-      "us": "",
-      "them": "",
+      "us": "Michel Catozzi",
+      "them": "Martyn Hirst",
       "r": ""
     },
     {
       "label": "Singles 4",
-      "us": "",
-      "them": "",
+      "us": "Nic Light",
+      "them": "Johannes Hoj",
       "r": ""
     },
     {
       "label": "Singles 5",
-      "us": "",
-      "them": "",
+      "us": "Tom Hughes",
+      "them": "Kurt Petersen",
       "r": ""
     },
     {
       "label": "Singles 6",
-      "us": "",
-      "them": "",
+      "us": "Dave Cross",
+      "them": "Allan Pedersen",
       "r": ""
     },
     {
@@ -61,6 +61,6 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-12T18:50:00+01:00",
+  "updated": "2026-11-12T20:30",
   "start": "2026-11-12T20:30:00+01:00"
 }
