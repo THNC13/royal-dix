@@ -4,7 +4,7 @@
   "date": "2026-11-12",
   "opp": "Boulevard",
   "venue": "home",
-  "status": "Doubles 1 in play",
+  "status": "Doubles 2 in play",
   "frames": [
     {
       "label": "Singles 1",
@@ -46,13 +46,13 @@
       "label": "Doubles 1",
       "us": "Bob Whelan & Michel Catozzi",
       "them": "Alex Thibau & Kim Jensen",
-      "r": "live"
+      "r": "W"
     },
     {
       "label": "Doubles 2",
       "us": "Göran Nielsen & Alvaro Jimenez",
       "them": "Martyn Hirst & Johannes Hoj",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Doubles 3",
@@ -61,6 +61,6 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-12T22:15",
+  "updated": "2026-11-12T22:37",
   "start": "2026-11-12T20:30:00+01:00"
 }
