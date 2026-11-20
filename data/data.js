@@ -10,21 +10,22 @@ window.RD = {
   team: "Royal Dix",
   leagueName: "Econ Winter Pool League",
   season: "2026/27",
-  lastUpdated: "2026-11-13",
+  lastUpdated: "2026-11-20",
   leagueAfterWeek: 5,
+  leaguePartial: "Includes Smokeys Men v Royal Dix from week 6. The other week 6 results will follow",
 
   // ---------- LEAGUE TABLE ----------
   // Keep rows in the same order as the official table (the site does not re-sort).
   // p = matches played, w = matches won, l = matches lost,
   // f = frames for, a = frames against, pts = league points
   league: [
-    { team: "Smokeys Men",             p: 5, w: 4, l: 1, f: 32, a: 13, pts: 36 },
+    { team: "Smokeys Men",             p: 6, w: 5, l: 1, f: 37, a: 17, pts: 42 },
     { team: "Royal Oak",               p: 5, w: 4, l: 1, f: 29, a: 16, pts: 33 },
     { team: "El Barquito",             p: 5, w: 4, l: 1, f: 28, a: 17, pts: 32 },
     { team: "Boulevard",               p: 5, w: 3, l: 2, f: 27, a: 18, pts: 30 },
     { team: "Churchills",              p: 5, w: 3, l: 2, f: 26, a: 19, pts: 29 },
+    { team: "Royal Dix",               p: 5, w: 2, l: 3, f: 25, a: 20, pts: 27, us: true },
     { team: "Wobbly Dix",              p: 4, w: 3, l: 1, f: 21, a: 15, pts: 24 },
-    { team: "Royal Dix",               p: 4, w: 2, l: 2, f: 21, a: 15, pts: 23, us: true },
     { team: "Penguin Potters",         p: 4, w: 1, l: 3, f: 15, a: 21, pts: 16 },
     { team: "Captain 'N",              p: 5, w: 1, l: 4, f: 15, a: 30, pts: 16 },
     { team: "Smokeys Hot Shotz",       p: 4, w: 0, l: 4, f: 6, a: 30, pts: 6 },
@@ -42,17 +43,17 @@ window.RD = {
   // e.g. "3S-W" = won their week 3 singles frame, "3D-L" = lost their week 3 doubles frame.
   // The site works out played / won / win % / form from this list.
   players: [
-    { ball: 1, name: "Tom",    full: "Tom Hughes",     captain: true, results: ["1S-W","1D-L","2S-W","2D-W","3S-L","5S-L","5D-W"] },
-    { ball: 2, name: "Nic",    full: "Nic Light",      results: ["1S-L","1D-W","2S-W","2D-W","3S-W","3D-L","5S-W","5D-W"] },
-    { ball: 3, name: "Dave",   results: ["3S-W","3D-W","5S-W"] },
+    { ball: 1, name: "Tom",    full: "Tom Hughes",     captain: true, results: ["1S-W","1D-L","2S-W","2D-W","3S-L","5S-L","5D-W","6D-L"] },
+    { ball: 2, name: "Nic",    full: "Nic Light",      results: ["1S-L","1D-W","2S-W","2D-W","3S-W","3D-L","5S-W","5D-W","6S-L","6D-L"] },
+    { ball: 3, name: "Dave",   results: ["3S-W","3D-W","5S-W","6S-W","6D-W"] },
     { ball: 4, name: "Darren", full: "Darren Baillie", results: ["1S-W","1D-W","2S-W","2D-W","5S-W"] },
     { ball: 5, name: "Ron",    results: [] },
-    { ball: 6, name: "Göran",  full: "Göran Nielsen",  results: ["1S-L","1D-L","2S-L","2D-W","3S-L","5D-L"] },
-    { ball: 7, name: "Bob",    full: "Bob Whelan",     results: ["1S-W","1D-L","2S-W","2D-W","3S-L","3D-L","5S-L","5D-W"] },
-    { ball: 8, name: "Michel", full: "Michel Catozzi", results: ["1S-L","1D-L","2S-W","2D-W","3S-W","3D-W","5S-L","5D-W"] },
+    { ball: 6, name: "Göran",  full: "Göran Nielsen",  results: ["1S-L","1D-L","2S-L","2D-W","3S-L","5D-L","6S-W"] },
+    { ball: 7, name: "Bob",    full: "Bob Whelan",     results: ["1S-W","1D-L","2S-W","2D-W","3S-L","3D-L","5S-L","5D-W","6S-L","6D-L"] },
+    { ball: 8, name: "Michel", full: "Michel Catozzi", results: ["1S-L","1D-L","2S-W","2D-W","3S-W","3D-W","5S-L","5D-W","6S-W","6D-W"] },
     { ball: 9, name: "Alan",   results: [] },
     { ball: 11, name: "Alvaro", results: ["3D-L","5D-L"] },
-    { ball: 12, name: "Ana",    results: ["3D-L"] }
+    { ball: 12, name: "Ana",    results: ["3D-L","6S-L","6D-L"] }
   ],
 
   // ---------- OFFICIAL LEAGUE PLAYER RANKING ----------
@@ -177,7 +178,7 @@ window.RD = {
     { wk: "3",     date: "2026-10-29", venue: "home", opp: "Wobbly Dix",             result: { us: 4, them: 6 } },
     { wk: "4",     date: "2026-11-05", venue: "bye",  opp: "Rest week",              result: null },
     { wk: "5",     date: "2026-11-12", venue: "home", opp: "Boulevard",              result: { us: 6, them: 4 } },
-    { wk: "6",     date: "2026-11-19", venue: "away", opp: "Smokeys Men",            result: null },
+    { wk: "6",     date: "2026-11-19", venue: "away", opp: "Smokeys Men",            result: { us: 4, them: 6 } },
     { wk: "7",     date: "2026-11-26", venue: "home", opp: "El Barquito",            result: null },
     { wk: "8",     date: "2026-12-03", venue: "away", opp: "Penguin Potters",        result: null },
     { wk: "9",     date: "2026-12-10", venue: "home", opp: "Smokeys Hot Shotz",      result: null },
