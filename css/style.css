@@ -597,3 +597,16 @@ body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-ins
 }
 /* no auto-linking of venues, dates or numbers on phones */
 .sb, .sb *, .live, .live *, .fx, .fx *, #next, #next * { -webkit-touch-callout: none; }
+
+/* ---- Language switch (top corner) ---- */
+.lang { display: inline-flex; align-items: center; gap: 0; padding: 3px; border: 1px solid rgba(240,200,120,.45); border-radius: 999px; background: rgba(0,0,0,.35);
+  color: #e9dcc0; font: 700 12px/1 var(--cond, "Barlow Condensed", sans-serif); letter-spacing: .08em; cursor: pointer; min-height: 0 !important; }
+.lang span { padding: 7px 9px; border-radius: 999px; }
+.lang span.on { background: linear-gradient(#f0d58a, #c9a24a); color: #1c1608; }
+.lang:focus-visible { outline: 3px solid var(--brass-hi, #f0d58a); outline-offset: 3px; }
+.topbar .tb > .lang { position: absolute; right: 12px; top: 10px; z-index: 5; }
+@media (max-width: 1000px) {
+  .topbar .tb { display: flex; align-items: flex-start; gap: 6px; padding-right: 10px; }
+  .topbar .tb nav { flex: 1; min-width: 0; margin: 0; }
+  .topbar .tb > .lang { position: static; flex: none; margin-top: 10px; }
+}

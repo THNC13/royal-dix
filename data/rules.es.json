@@ -1,0 +1,326 @@
+{
+ "title": "Reglas de la Liga de Pool de Fuengirola (EPA bola 8) — referencia rápida",
+ "note": "Resúmenes cortos pensados para usar en la mesa. Si un resumen y las reglas oficiales difieren, mandan las reglas oficiales y el árbitro. Traducción orientativa del inglés.",
+ "sections": [
+  {
+   "id": "1",
+   "title": "1. El juego",
+   "rules": [
+    {
+     "ref": "1",
+     "tags": "arbitro árbitro decision decisión definitiva deportividad antideportivo espiritu",
+     "text": "Bola 8, jugada con deportividad. El árbitro es el único juez del juego limpio y del juego sucio y puede tomar las medidas necesarias para hacer cumplir las reglas. La decisión del árbitro es definitiva."
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "title": "2. Material",
+   "rules": [
+    {
+     "ref": "2",
+     "tags": "bolas grupos colores rayadas lisas rojas amarillas mesa troneras bolsillos",
+     "text": "Mesa rectangular de seis troneras con 15 bolas objetivo más la bola blanca. Hay dos grupos de bolas objetivo y la bola negra 8. Los juegos son numerados (lisas del 1 al 7, rayadas del 9 al 15) o de colores lisos (rojas y amarillas)."
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "title": "3. Objetivo del juego",
+   "rules": [
+    {
+     "ref": "3",
+     "tags": "ganar objetivo negra 8 ocho grupo meter embocar",
+     "text": "Mete todas las bolas de tu grupo en cualquier orden y después mete legalmente la negra 8 para ganar la partida."
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "title": "4. Inicio de la partida",
+   "rules": [
+    {
+     "ref": "4(a)",
+     "tags": "triangulo triángulo colocar punto",
+     "text": "Coloca las bolas en el triángulo con la negra 8 en el punto de la bola 8, donde se cruzan las líneas entre el centro y las troneras de las esquinas."
+    },
+    {
+     "ref": "4(b)",
+     "tags": "sorteo moneda cara cruz orden quien saca",
+     "text": "Un sorteo a cara o cruz decide el orden de juego. El ganador saca o hace que saque el rival."
+    },
+    {
+     "ref": "4(c)",
+     "tags": "saque rotura falta saque triangulo dos turnos visitas banda cabeza ilegal",
+     "text": "El jugador que saca golpea desde cualquier punto sobre la línea de cabeza o detrás de ella, hacia el triángulo. Debe meter al menos una bola objetivo o llevar al menos dos bolas objetivo a una banda. Si no lo hace, es un saque con falta: se vuelve a colocar el triángulo y el rival empieza con 2 turnos."
+    },
+    {
+     "ref": "4(d)",
+     "tags": "negra 8 ocho metida meti metí meter embocar embocada en el saque rotura rehacer triangulo",
+     "text": "Si la negra 8 se mete en el saque, se vuelve a colocar el triángulo y saca otra vez el mismo jugador. No hay penalización, aunque también se hayan metido otras bolas o la blanca, o hayan salido de la mesa."
+    },
+    {
+     "ref": "4(e)",
+     "tags": "grupo elegir lisas rayadas primera meter ambos grupos",
+     "text": "La primera bola objetivo que un jugador mete legalmente (también tras una falta) define su grupo. Si en esa jugada se meten bolas de los dos grupos, el jugador debe elegir un grupo antes de seguir."
+    },
+    {
+     "ref": "4(f)",
+     "tags": "mesa abierta grupos sin decidir nada metido saque",
+     "text": "Si no se mete ninguna bola objetivo en un saque legal, los jugadores se turnan jugando a cualquiera de los grupos hasta que alguien mete una bola legalmente, y eso decide los grupos."
+    },
+    {
+     "ref": "4(g)",
+     "tags": "falta antes grupos decididos mesa abierta cualquier bola primer tiro",
+     "text": "Si hay una falta (que no sea la 8 en el saque) y se meten bolas antes de decidir los grupos, esas bolas se ignoran para decidir los grupos. El jugador que entra puede jugar cualquier bola, incluida la 8, en el primer tiro, y la primera bola metida legalmente decide los grupos."
+    },
+    {
+     "ref": "4(h)",
+     "tags": "continuar otro tiro turno visita seguir",
+     "text": "Meter una bola legalmente da derecho a otro tiro. El jugador sigue tirando hasta que falla al meter una de sus bolas o comete una falta."
+    },
+    {
+     "ref": "4(i)",
+     "tags": "combinacion combinación carambola primera bola tocada",
+     "text": "Se permiten las carambolas (combinaciones) siempre que la primera bola tocada sea de tu grupo, o cualquier bola en el primer tiro tras una falta (ver 6(c))."
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "title": "5. Faltas",
+   "rules": [
+    {
+     "ref": "5(a)",
+     "tags": "blanca dentro embocada bola blanca tronera",
+     "text": "Blanca dentro: se mete la bola blanca."
+    },
+    {
+     "ref": "5(b)",
+     "tags": "tocar bola rival primero equivocada",
+     "text": "Tocar primero con la blanca una bola del rival, salvo en el primer tiro tras una falta."
+    },
+    {
+     "ref": "5(c)",
+     "tags": "fallar no tocar sin contacto tiro al aire",
+     "text": "No tocar ninguna bola con la blanca."
+    },
+    {
+     "ref": "5(d)",
+     "tags": "salto saltar por encima bola",
+     "text": "Tiro de salto: la blanca salta por encima de cualquier parte de una bola antes de tocar una bola."
+    },
+    {
+     "ref": "5(e)",
+     "tags": "tocar negra 8 primero ocho antes",
+     "text": "Tocar primero la 8 antes de haber metido todas tus bolas, salvo en el primer tiro tras una falta."
+    },
+    {
+     "ref": "5(f)",
+     "tags": "meter bola rival bolas del rival embocadas",
+     "text": "Meter cualquier bola del rival, salvo en el primer tiro tras una falta."
+    },
+    {
+     "ref": "5(g1)",
+     "tags": "bola fuera de la mesa saltó colocar punto",
+     "text": "Una bola objetivo o la 8 que sale de la mesa se coloca de nuevo en el punto de la bola 8, o lo más cerca posible sin tocar otra bola, sobre la línea entre ese punto y el centro de la línea de cabeza."
+    },
+    {
+     "ref": "5(g2)",
+     "tags": "blanca fuera de la mesa saltó bola en mano",
+     "text": "Si la blanca sale de la mesa, se juega con bola en mano (ver 8(b)). Una bola cuenta como fuera de la mesa si queda parada en cualquier sitio que no sea el tapete."
+    },
+    {
+     "ref": "5(h)",
+     "tags": "tocar bola ropa manga cuerpo mover bola",
+     "text": "Tocar cualquier bola con la ropa o el cuerpo. La única excepción es la bola blanca después de que el árbitro haya señalado falta y el jugador tenga derecho a bola en mano (ver 6(b))."
+    },
+    {
+     "ref": "5(i)",
+     "tags": "pie suelo pies sentado",
+     "text": "No tener al menos un pie en el suelo."
+    },
+    {
+     "ref": "5(j)",
+     "tags": "tocar otra bola con el taco",
+     "text": "Jugar o tocar con el taco cualquier bola que no sea la blanca."
+    },
+    {
+     "ref": "5(k)",
+     "tags": "virola fuste lado del taco no punta suela",
+     "text": "Golpear la blanca con cualquier parte del taco que no sea la suela (la punta)."
+    },
+    {
+     "ref": "5(l)",
+     "tags": "fuera de turno jugador equivocado",
+     "text": "Jugar fuera de turno."
+    },
+    {
+     "ref": "5(m)",
+     "tags": "bolas en movimiento no paradas demasiado pronto",
+     "text": "Jugar antes de que las bolas se hayan detenido."
+    },
+    {
+     "ref": "5(n)",
+     "tags": "recolocar antes de colocar",
+     "text": "Jugar antes de que se hayan recolocado las bolas que deben recolocarse."
+    },
+    {
+     "ref": "5(o)",
+     "tags": "doble golpe dos veces",
+     "text": "Golpear la blanca con el taco más de una vez."
+    },
+    {
+     "ref": "5(p)",
+     "tags": "empujar empujado contacto punta",
+     "text": "Tiro empujado: la punta sigue tocando la blanca cuando esta contacta con la bola objetivo, o la punta sigue claramente en contacto una vez que la blanca ya se ha movido hacia delante."
+    },
+    {
+     "ref": "5(q)",
+     "tags": "elegir grupo ambos grupos metidas olvidar",
+     "text": "No elegir un grupo cuando se meten bolas de ambos grupos con la primera bola legal."
+    },
+    {
+     "ref": "5(r)",
+     "tags": "saque falta bandas dos bolas rotura",
+     "text": "Saque con falta: no meter una bola objetivo ni llevar al menos dos bolas objetivo a una banda."
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "title": "6. Penalización tras una falta",
+   "rules": [
+    {
+     "ref": "6(a)",
+     "tags": "penalizacion penalización perder turno visita dos turnos visitas",
+     "text": "Después de cualquier falta, el jugador que la cometió pierde su siguiente turno en la mesa, así que su rival tiene dos turnos."
+    },
+    {
+     "ref": "6(b)",
+     "tags": "bola en mano blanca dos turnos visitas linea de cabeza línea donde esta árbitro arbitro",
+     "text": "Con dos turnos, el jugador puede jugar la blanca desde donde esté si está sobre la mesa, o colocarla en cualquier punto sobre la línea de cabeza o detrás de ella. Mover la blanca así no cuenta como tiro ni como turno. Pide al árbitro que te dé la blanca."
+    },
+    {
+     "ref": "6(c)",
+     "tags": "primer tiro tras falta cualquier bola sin penalizacion penalización segundo turno visita",
+     "text": "Solo en el primer tiro del primer turno, el jugador que entra puede jugar la blanca contra cualquier bola sin penalización, incluida una bola del rival o la 8. Si no mete ninguna bola en ese primer turno, el juego pasa a su segundo turno, que empieza cuando golpea la blanca en el primer tiro de ese turno."
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "title": "7. Perder la partida",
+   "rules": [
+    {
+     "ref": "7(a)",
+     "tags": "perder partida 8 negra metida demasiado pronto",
+     "text": "Meter la 8 antes de haber metido todas las bolas de tu grupo hace perder la partida, salvo en el saque (ver 4(d))."
+    },
+    {
+     "ref": "7(b)",
+     "tags": "falta al meter la 8 negra perder",
+     "text": "Cometer cualquier falta al meter la 8 hace perder la partida, salvo en el saque (ver 4(d))."
+    },
+    {
+     "ref": "7(c)",
+     "tags": "meter 8 y otra bola mismo tiro perder excepcion excepción tras falta solo queda la 8",
+     "text": "Meter la 8 y cualquier otra bola en el mismo tiro hace perder la partida. La excepción es tras una falta cuando en la mesa solo quedan la 8 y bola(s) del grupo del rival: entonces, con el primer tiro del primer turno, el jugador puede meter legalmente la 8 junto con esa(s) bola(s), por cualquier combinación y en cualquier orden."
+    },
+    {
+     "ref": "7(d)",
+     "tags": "no intentar jugar bola propia deliberadamente perder",
+     "text": "El jugador que claramente no intenta jugar una bola de su propio grupo pierde la partida."
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "title": "8. Generalidades",
+   "rules": [
+    {
+     "ref": "8(a1)",
+     "tags": "blanca tocando bola objetivo pegada congelada jugar alejando",
+     "text": "Si la blanca está tocando una bola objetivo, debes jugar alejándote de ella. Mover esa bola objetivo es falta."
+    },
+    {
+     "ref": "8(a2)",
+     "tags": "blanca tocando bola legal considera jugada pegada congelada",
+     "text": "Si la blanca está tocando cualquier bola que puedes jugar legalmente, se considera que has jugado esa bola. Si entonces la blanca no toca ninguna bola, o golpea una bola del rival o la 8, el tiro es válido y no es falta."
+    },
+    {
+     "ref": "8(b)",
+     "tags": "bola en mano blanca linea de cabeza línea colocar",
+     "text": "Bola en mano: se juega desde cualquier punto sobre la línea de cabeza o detrás de ella, en cualquier dirección."
+    },
+    {
+     "ref": "8(c)",
+     "tags": "control de la mesa tocar bola cae tronera tras falta jugador",
+     "text": "Un jugador tiene el control de la mesa desde el momento en que su cuerpo, su taco o su ropa tocan la mesa antes de su tiro, durante todo su turno, hasta que el rival hace lo mismo antes del suyo. Cualquier bola (incluida la 8) que caiga en una tronera en ese tiempo cuenta como metida, y el jugador con el control asume la penalización o el beneficio. Una vez golpeada la blanca, hay que completar un tiro legal, y que caiga una bola NO anula una falta."
+    },
+    {
+     "ref": "8(d)",
+     "tags": "partida terminada fin negra 8 metida resto",
+     "text": "La partida termina cuando la 8 se mete en cualquier tronera y todas las demás bolas se han detenido, salvo en el saque (ver 4(d))."
+    }
+   ]
+  },
+  {
+   "id": "9",
+   "title": "9. Tablas (bloqueo)",
+   "rules": [
+    {
+     "ref": "9",
+     "tags": "tablas bloqueo sin tiro legal reiniciar triangulo atascado defensa seguridad",
+     "text": "Si no se puede hacer un tiro legal, por accidente o a propósito, la partida la reinicia el jugador que empezó esa partida. El árbitro no debe permitir muchos turnos en los que ninguno de los dos jugadores intenta la primera bola que decide los grupos (salvo que se esté avanzando). Si ese jugador empezó la partida porque el rival cometió falta en el saque, vuelve a sacar él en el reinicio, no el rival que hizo la falta."
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "title": "10. Orientaciones",
+   "rules": [
+    {
+     "ref": "10(a)",
+     "tags": "definicion definición tiro",
+     "text": "Un 'tiro' es golpear la bola una vez."
+    },
+    {
+     "ref": "10(b)",
+     "tags": "definicion definición turno visita",
+     "text": "Un 'turno' (visita) es una vez en la mesa, formada por un tiro o una serie de tiros."
+    },
+    {
+     "ref": "10(c)",
+     "tags": "definicion definición saque rotura",
+     "text": "El 'saque' es el primer tiro de una partida, o el primer tiro de una partida que se reinicia."
+    },
+    {
+     "ref": "10(d)",
+     "tags": "coaching consejos ayuda antideportivo",
+     "text": "Dar consejos al jugador (coaching) cuenta como comportamiento antideportivo (ver regla 1)."
+    },
+    {
+     "ref": "10(e)",
+     "tags": "arbitro árbitro aconsejar reglas preguntado",
+     "text": "Un árbitro puede aconsejar sobre las reglas, pero solo si se lo piden."
+    },
+    {
+     "ref": "10(f)",
+     "tags": "elegir grupo sacador obligacion obligación",
+     "text": "Los dos jugadores están obligados a asegurarse de que el jugador que saca elija un grupo de bolas objetivo."
+    },
+    {
+     "ref": "10(g)",
+     "tags": "juego lento tiempo excesivo",
+     "text": "El árbitro debe asegurarse de que nadie tarda demasiado en un tiro, actuando conforme a las reglas o directrices de la competición."
+    },
+    {
+     "ref": "10(h)",
+     "tags": "dobles hablar pareja conversacion conversación consejos",
+     "text": "En dobles, una vez que un jugador tiene el control de la mesa, hablar con cualquier otra persona, incluida su pareja, es antideportivo."
+    }
+   ]
+  }
+ ]
+}

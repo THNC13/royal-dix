@@ -12,9 +12,9 @@
     });
   };
   K.fmtDate = function (iso, opts) {
-    return new Date(iso + "T12:00:00").toLocaleDateString("en-GB", opts || { weekday: "short", day: "numeric", month: "short" });
+    return new Date(iso + "T12:00:00").toLocaleDateString((window.RDI || {}).locale || "en-GB", opts || { weekday: "short", day: "numeric", month: "short" });
   };
-  K.ordinal = function (n) { var s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+  K.ordinal = function (n) { if (window.RDI && RDI.es) return n + ".º"; var s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
   K.plural = function (n, w) { return n + " " + w + (n === 1 ? "" : "s"); };
   K.ball = function (n) { return '<span class="ball" data-n="' + n + '"><span>' + n + "</span></span>"; };
   K.pct = function (p) { return p.p > 0 ? (p.w / p.p) * 100 : null; };
@@ -76,7 +76,7 @@
 
   if (kind === "day") {
     var home = todays.venue === "home";
-    tickerItems = ["Today is match day", home ? D.team + " v " + todays.opp : D.team + " away at " + todays.opp, home ? "Home" : "Away", "Tonight"];
+    tickerItems = ["Today is match day", home ? D.team + " v " + todays.opp : D.team + " away at " + todays.opp, home ? "At home" : "Away", "Tonight"];
     if (them) tickerItems.push(todays.opp + " are " + K.ordinal(them.pos) + " on " + them.t.pts + " pts");
     if (us) tickerItems.push(D.team + " are " + K.ordinal(us.pos) + " on " + us.t.pts + " pts");
     var pep = !us ? "Let’s get after it, lads." :
@@ -143,14 +143,16 @@
     var tk = "";
     if (tickerItems.length) {
       var one = tickerItems.map(function (t) { return '<span class="tk-i">' + esc(t) + "</span>"; }).join("");
-      tk = '<div class="ticker" id="ticker" role="region" aria-label="' + esc(tickerItems.join(". ")) + '">' +
+      tk = '<div class="ticker" id="ticker" role="region" aria-label="' + esc(tickerItems.map(function (x) { return RDI.t(x); }).join(". ")) + '">' +
            '<div class="tk-track" aria-hidden="true">' + one + one + one + one + "</div></div>";
     }
     top.innerHTML = tk +
       '<div class="tb"><a class="brand" href="index.html" aria-label="Royal Dix home"><img src="assets/badge-sm.jpg" alt="" width="36" height="36"></a>' +
       '<nav aria-label="Pages">' + PAGES.map(function (p) {
         return '<a href="' + p[0] + '"' + (p[2] === page ? ' aria-current="page"' : "") + "><span>" + esc(p[1]) + "</span></a>";
-      }).join("") + "</nav></div>";
+      }).join("") + '</nav><button type="button" class="lang" id="lang" aria-label="Switch language" title="English / Español">' +
+      '<span' + (RDI.es ? "" : ' class="on"') + ">EN</span><span" + (RDI.es ? ' class="on"' : "") + ">ES</span></button></div>";
+    K.$("lang").addEventListener("click", function () { RDI.set(RDI.es ? "en" : "es"); });
 
     // On phones the tab row scrolls sideways: bring the current tab to the middle.
     var nav = top.querySelector("nav"), cur = top.querySelector("nav [aria-current]");

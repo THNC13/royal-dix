@@ -88,7 +88,7 @@
     box.querySelector("img").src = "/api/photos/" + p.id;
     box.querySelector("img").alt = p.caption || "Royal Dix photo";
     var d = box.querySelector(".lb-del"); if (d) { d.textContent = (mine[p.id] || !p.v) ? "Delete photo" : "Delete (captain)"; d.hidden = false; var pn = box.querySelector(".lb-pane"); if (pn) pn.hidden = true; var st0 = box.querySelector(".lb-st"); if (st0) st0.textContent = ""; }
-    var when = p.ts ? new Date(p.ts).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : "";
+    var when = p.ts ? new Date(p.ts).toLocaleDateString((window.RDI || {}).locale || "en-GB", { day: "numeric", month: "long", year: "numeric" }) : "";
     box.querySelector(".lb-cap").innerHTML = (p.caption ? "<b>" + esc(p.caption) + "</b>" : "") + "<span>" + esc([p.by ? "Added by " + p.by : "", when].filter(Boolean).join(" · ")) + "</span>";
   }
   function close() { if (box) { box.remove(); box = null; document.body.style.overflow = ""; document.removeEventListener("keydown", key); } }

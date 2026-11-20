@@ -24,7 +24,8 @@
   ];
 
   // ---------- Load rules ----------
-  fetch("data/rules.json")
+  var ES = !!(window.RDI && RDI.es);
+  fetch(ES ? "data/rules.es.json" : "data/rules.json")
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
       data.sections.forEach(function (s) {
@@ -55,12 +56,12 @@
   });
 
   // ---------- Live search (no internet service needed) ----------
-  var stop = "the a an and or of to in on at is it was were be been my our their they he she we you i can do does did if when then with that this for from by as are but not no so than into out up down over after before while".split(" ");
-  var syn = { black: "8 eight", eight: "8 black", scratch: "in off cue ball potted", frozen: "touching", stripes: "group", solids: "group", spots: "group", ref: "referee", pocketed: "potted pot", sank: "potted pot", sunk: "potted pot" };
+  var stop = ((ES ? "el la los las un una unos unas y o de del al a en es era fue ser mi mis nuestro nuestra su sus ellos ella nosotros yo tu puedo puede pueden hacer hace hice si cuando entonces con que esto este esta para por como pero no ni se lo le me te sobre despues antes mientras " : "") + "the a an and or of to in on at is it was were be been my our their they he she we you i can do does did if when then with that this for from by as are but not no so than into out up down over after before while").split(" ");
+  var syn = ES ? { negra: "8 ocho", ocho: "8 negra", blanca: "bola blanca", rayadas: "grupo", lisas: "grupo", rayada: "grupo", lisa: "grupo", arbitro: "árbitro", metida: "embocada embocar meter", metí: "embocada embocar meter", meti: "embocada embocar meter", metio: "embocada embocar meter", entro: "embocada", falta: "falta", turno: "turno visita", saque: "saque rotura", rotura: "saque", pegada: "tocando", pegadas: "tocando", congelada: "tocando" } : { black: "8 eight", eight: "8 black", scratch: "in off cue ball potted", frozen: "touching", stripes: "group", solids: "group", spots: "group", ref: "referee", pocketed: "potted pot", sank: "potted pot", sunk: "potted pot" };
 
   function tokens(q) {
     var out = [];
-    q.toLowerCase().replace(/[^a-z0-9' ]+/g, " ").split(/\s+/).forEach(function (w) {
+    q.toLowerCase().replace(/[^a-z0-9'áéíóúüñ ]+/g, " ").split(/\s+/).forEach(function (w) {
       if (!w || stop.indexOf(w) > -1) return;
       out.push(w);
       if (syn[w]) syn[w].split(" ").forEach(function (x) { out.push(x); });
@@ -77,7 +78,7 @@
       var hay = (r.text + " " + r.tags + " " + r.ref).toLowerCase(), score = 0;
       toks.forEach(function (t) {
         if (t.length < 2) return;
-        var re = new RegExp("(^|[^a-z0-9])" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+        var re = new RegExp("(^|[^a-z0-9áéíóúüñ])" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
         if (re.test(hay)) score += (r.tags.toLowerCase().indexOf(t) > -1 ? 3 : 2);
       });
       return { r: r, score: score };
@@ -118,7 +119,7 @@
     fetch("/api/ask", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ question: q, code: $("code").value })
+      body: JSON.stringify({ question: q, code: $("code").value, lang: ES ? "es" : "en" })
     })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; }); })
       .then(function (res) {

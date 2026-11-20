@@ -73,3 +73,10 @@ Whoever adds a photo can delete it from the same phone (a private token is kept 
 
 By default the assistant uses Cloudflare's free built-in AI (`ai` binding in `wrangler.jsonc`), with a daily free allowance and no key.
 For better answers, add an `ANTHROPIC_API_KEY` secret in Cloudflare and it will use Claude instead. Add a `TEAM_CODE` secret to make people type a code first.
+
+
+## Languages (English / Spanish)
+Every page has an **EN | ES** switch in the top corner. The choice is remembered on that phone (or use `?lang=es` / `?lang=en` on any address).
+- Phrases and patterns for the Spanish text live in `js/i18n.js` (`EXACT` for whole phrases, `REP` for patterns with numbers). If you add new wording in English anywhere on the site, add its Spanish there.
+- Names of teams and players are never translated.
+- The rules are translated in `data/rules.es.json` (keep the same `ref` numbers as `data/rules.json`). The rules assistant answers in Spanish when the page is in Spanish.
