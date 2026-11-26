@@ -172,6 +172,7 @@
     [/^(\d+) photos added!$/, "¡$1 fotos añadidas!"], [/^Adding photo (\d+) of (\d+)…$/, "Añadiendo foto $1 de $2…"],
     [/^Checking the rules…$/, "Consultando las reglas…"],
     // league names and sentences with a date or week in them
+    [/\. Includes Royal Dix v El Barquito from week 7\. The other week 7 results will follow/, ". Incluye el Royal Dix v El Barquito de la semana 7. El resto de resultados de la semana 7 se añadirán pronto"],
     [/\. Includes Smokeys Men v Royal Dix from week 6\. The other week 6 results will follow/, ". Incluye el Smokeys Men v Royal Dix de la semana 6. El resto de resultados de la semana 6 se añadirán pronto"],
     [/Econ Winter Pool League/g, "Liga de Pool de Invierno Econ"],
     [/, after week (\d+)/, ", tras la semana $1"],

@@ -4,7 +4,7 @@
   "date": "2026-11-26",
   "opp": "El Barquito",
   "venue": "home",
-  "status": "Singles 5 in play",
+  "status": "Full time",
   "start": "2026-11-26T20:30:00+01:00",
   "frames": [
     {
@@ -35,7 +35,7 @@
       "label": "Singles 5",
       "us": "Nic Light",
       "them": "Deb Rogers",
-      "r": "live"
+      "r": "L"
     },
     {
       "label": "Singles 6",
@@ -45,22 +45,22 @@
     },
     {
       "label": "Doubles 1",
-      "us": "",
-      "them": "",
-      "r": ""
+      "us": "Darren Baillie & Álvaro Jiménez",
+      "them": "Karl Martin & Jim Edmunds",
+      "r": "W"
     },
     {
       "label": "Doubles 2",
-      "us": "",
-      "them": "",
-      "r": ""
+      "us": "Dave Cross & Bob Whelan",
+      "them": "Mark Walsh & Deb Rogers",
+      "r": "L"
     },
     {
       "label": "Doubles 3",
-      "us": "",
-      "them": "",
-      "r": ""
+      "us": "Nic Light & Tom Hughes",
+      "them": "Harry Demopoulos & Trevor Dunn",
+      "r": "W"
     }
   ],
-  "updated": "2026-11-26T22:03"
+  "updated": "2026-11-26T23:06"
 }
