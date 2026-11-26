@@ -4,7 +4,7 @@
   "date": "2026-11-26",
   "opp": "El Barquito",
   "venue": "home",
-  "status": "Singles 3 in play",
+  "status": "Singles 4 in play",
   "start": "2026-11-26T20:30:00+01:00",
   "frames": [
     {
@@ -21,15 +21,15 @@
     },
     {
       "label": "Singles 3",
-      "us": "Göran Nielsen",
+      "us": "Dave Cross",
       "them": "Mark Walsh",
-      "r": "live"
+      "r": "L"
     },
     {
       "label": "Singles 4",
-      "us": "Dave Cross",
+      "us": "Göran Nielsen",
       "them": "Trevor Dunn",
-      "r": ""
+      "r": "live"
     },
     {
       "label": "Singles 5",
@@ -62,5 +62,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-26T20:50"
+  "updated": "2026-11-26T21:15"
 }
