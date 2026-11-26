@@ -4,43 +4,43 @@
   "date": "2026-11-26",
   "opp": "El Barquito",
   "venue": "home",
-  "status": "Starting soon",
+  "status": "Singles 3 in play",
   "start": "2026-11-26T20:30:00+01:00",
   "frames": [
     {
       "label": "Singles 1",
       "us": "Darren Baillie",
-      "them": "",
-      "r": ""
+      "them": "Karl Martin",
+      "r": "W"
     },
     {
       "label": "Singles 2",
       "us": "Bob Whelan",
-      "them": "",
-      "r": ""
+      "them": "Harry Demopoulos",
+      "r": "L"
     },
     {
       "label": "Singles 3",
       "us": "Göran Nielsen",
-      "them": "",
-      "r": ""
+      "them": "Mark Walsh",
+      "r": "live"
     },
     {
       "label": "Singles 4",
       "us": "Dave Cross",
-      "them": "",
+      "them": "Trevor Dunn",
       "r": ""
     },
     {
       "label": "Singles 5",
       "us": "Nic Light",
-      "them": "",
+      "them": "Deb Rogers",
       "r": ""
     },
     {
       "label": "Singles 6",
       "us": "Tom Hughes",
-      "them": "",
+      "them": "Jim Edmunds",
       "r": ""
     },
     {
@@ -62,5 +62,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-26T20:10"
+  "updated": "2026-11-26T20:50"
 }
