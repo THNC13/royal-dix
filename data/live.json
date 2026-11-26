@@ -21,19 +21,19 @@
     },
     {
       "label": "Singles 3",
-      "us": "Dave Cross",
+      "us": "Göran Nielsen",
       "them": "",
       "r": ""
     },
     {
       "label": "Singles 4",
-      "us": "Nic Light",
+      "us": "Dave Cross",
       "them": "",
       "r": ""
     },
     {
       "label": "Singles 5",
-      "us": "Göran Nielsen",
+      "us": "Nic Light",
       "them": "",
       "r": ""
     },
@@ -62,5 +62,5 @@
       "r": ""
     }
   ],
-  "updated": "2026-11-26T19:59"
+  "updated": "2026-11-26T20:10"
 }
